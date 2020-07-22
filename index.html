@@ -7,28 +7,72 @@
     <link rel="stylesheet" href="css/main.css">
     <link rel="icon" href="./favicon.ico" type="image/x-icon">
     <link rel="shortcut icon" href="./favicon.ico" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css2?family=Istok+Web:wght@700&family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
     <title>Андрей Халимоненко. CV</title>
 </head>
 
 <body>
     <div class="container">
-        <header class="header_style">
+        <header class="header_style section-margin_bottom">
             <div class="header__photo">
-                <img class="photo" alt="Андрей Халимоненко" width="auto" height="auto">
+                <img class="photo" src="img/khalimonenko.jpeg" alt="Андрей Халимоненко" width="auto" height="auto">
             </div>
             <div class="header__desc">
-                <p class="header__name">Андрей Халимоненко</p>
-                <h1 class="header__position">frontend&#150;разработчик</h1>
-                <p class="header__city">из Санкт&#150;Петербурга</p>
-                <p class="header__years">40 лет,</p>
-                <p class="header__wish">ищу работу в офисе или удалённо</p>
-                <p class="header__salary">от
-                    <span class="header__sum">75&nbsp;Р</span>
+                <p class="header__name text-margin__bottom_20">Андрей Халимоненко</p>
+                <h1 class="header__position">Frontend&#150;разработчик</h1>
+                <p class="header__city text-margin__bottom_20">из Санкт&#150;Петербурга</p>
+                <p class="header__text">40 лет,</p>
+                <p class="header__text text-margin__bottom_20">ищу работу в офисе или удалённо</p>
+                <p class="header__text">от
+                    <span class="header__sum">75&nbsp;000&nbsp;₽</span>
                 </p>
             </div>
         </header>
+        <div class="menu-sticky section-margin_bottom">
+            <article class="article-style text-margin__bottom_20 invisible-block" id="menu-title">
+                Кто вы, Андрей Халимоненко?
+            </article>
+            <section class="menu" id="menuItems">
+                <a class="menu__item menu__item_sel" name="menu" data-menu="it" id="menu-it">Опыт в ИТ</a>
+                <a class="menu__item" name="menu" data-menu="all" id="menu-all">Весь опыт</a>
+                <a class="menu__item" name="menu" data-menu="charact" id="menu-charact">Общая характеристика</a>
+                <a class="menu__item" name="menu" data-menu="contact" id="menu-contact">Контактная информация</a>
+            </section>
+        </div>
+        <div class="resume-text" id="main-area">
+            <section class="block block_margin">
+                <div class="block_data">
+                    Образование:
+                </div>
+                <div class="block_text">
+                    <p class="block_text__item">&laquo;<a class="text-link" href="http://taom.ru">Тольяттинская академия управления</a>&raquo; (Тольятти, 2003 г.),</p>
+                    <p class="block_text__item">факультет &laquo;Уравления и финансов&raquo;,</p>
+                    <p class="block_text__item">специальность &laquo;Информационные системы в экономике&raquo;.</p>
+                </div>
+            </section>
+            <section class="block block_margin">
+                <div class="block_data">
+                    сентябрь 2019 &#151; май 2020
+                </div>
+                <div class="block_text">
+                    <p class="block_text__item">&laquo;<a class="text-link" href="http://geekbrains.ru">GeekBrains</a>&raquo;,</p>
+                    <p class="block_text__item">Обучение по професии frontend–разработчик.</p>
+                    <p class="block_text__item">Основные курсы: html5/css3, javascript 1–й и 2–й уровени, react</p>
+                </div>
+            </section>
+            <section class="block block_margin">
+                <div class="block_data">
+                    Образование:
+                </div>
+                <div class="block_text">
+                    <p class="block_text__item">&laquo;<a class="text-link" href="http://taom.ru">Тольяттинская академия управления</a>&raquo; (Тольятти, 2003 г.),</p>
+                    <p class="block_text__item">факультет &laquo;Уравления и финансов&raquo;,</p>
+                    <p class="block_text__item">специальность &laquo;Информационные системы в экономике&raquo;.</p>
+                </div>
+            </section>
+        </div>
     </div>
-    <script src="script/main.js"></script>
+    <script src="script/main.js" defer></script>
 </body>
 
 </html>

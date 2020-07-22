@@ -6,8 +6,8 @@
 }
 
 body {
-    margin: 80px auto 120px auto;
-    width: 90%;
+    margin: 100px auto;
+    width: 80%;
     box-sizing: border-box;
     background-color: $bg-main_color;
 }
@@ -19,10 +19,198 @@ body {
     box-sizing: border-box;
 }
 
-.header_style {
+.header {
+    &_style {
+        margin: 0 0 0 0;
+        padding: 0 0 0 0;
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+    }
+    &__photo {
+        position: relative;
+        overflow: hidden;
+        width: 350px;
+        height: 263px;
+    }
+    &__desc {
+        margin: 0 0 0 100px;
+        padding: 0 0 0 0;
+    }
+    &__name {
+        font-family: $font-main;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 30px;
+        line-height: 35px;
+        color: $text-main_color;
+        position: relative;
+        &::before {
+            content: '–';
+            color: $text-accent_color;
+            font-size: 20px;
+            font-weight: 500;
+            position: absolute;
+            top: -15px;
+            left: 210px;
+            transform: rotate(123deg);
+            -moz-transform: rotate(123deg);
+            -ms-transform: rotate(123deg);
+            -webkit-transform: rotate(123deg);
+            -o-transform: rotate(123deg);
+        }
+    }
+    &__position {
+        font-family: $font-title;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 43px;
+        line-height: 50px;
+        color: $text-main_color;
+    }
+    &__city {
+        font-family: $font-main;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 28px;
+        line-height: 35px;
+        color: $text-main_color;
+    }
+    &__text {
+        font-family: $font-main;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 20px;
+        color: $text-main_color;
+    }
+    &__sum {
+        font-family: $font-main;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 30px;
+        line-height: 35px;
+        color: $text-main_color;
+    }
+}
+
+.text-margin__bottom_20 {
+    margin: 0 0 20px 0;
+}
+
+.photo {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 350px;
+    height: 263px;
+    object-fit: cover;
+}
+
+.section-margin_bottom {
+    margin: 0 0 70px 0;
+}
+
+.invisible-block {
+    display: none;
+}
+
+.menu-sticky {
+    position: sticky;
+    top: 0;
+    background-color: rgba(255, 255, 255, 0.8);
+    transition: 2s;
+}
+
+.article-style {
+    margin: -50px 0 20px 0;
+    font-family: $font-main;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 30px;
+    line-height: 35px;
+    color: $text-main_color;
+}
+
+.menu {
+    margin: 0 0 0 0;
+    padding: 0 0 0 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    &__item {
+        font-family: $font-main;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 20px;
+        line-height: 25px;
+        color: $text-menu__item;
+        cursor: pointer;
+        text-decoration: none;
+        border-bottom: 2px dashed $text-accent_color;
+        padding-bottom: 3px;
+        &:hover {
+            border: none;
+            color: $text-main_color;
+        }
+        &_sel {
+            font-family: $font-title;
+            color: $text-main_color;
+            cursor: default;
+            border: none;
+        }
+    }
+}
+
+.resume-text {
+    margin: 0 0 0 0;
+    padding: 0 0 0 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.block {
     margin: 0 0 0 0;
     padding: 0 0 0 0;
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
+    &_data {
+        width: 200px;
+        margin: 0 20px 0 0;
+        padding: 0 0 0 0;
+        text-align: right;
+        font-family: $font-main;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 20px;
+        line-height: 25px;
+        color: $text-main_color;
+    }
+    &_text {
+        width: 60%;
+        text-align: left;
+        font-family: $font-main;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 20px;
+        line-height: 25px;
+        color: $text-main_color;
+        &__item:first-child {
+            margin: 0 0 0 -10px;
+        }
+    }
+    &_margin {
+        margin: 0 0 60px 0;
+    }
+}
+
+.text-link {
+    color: $text-accent_color;
+    text-decoration: underline;
+    cursor: pointer;
+    &:hover {
+        color: $text-main_color;
+        text-decoration: none;
+    }
 }
