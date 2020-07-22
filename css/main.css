@@ -8,7 +8,47 @@ body {
   margin: 100px auto;
   width: 80%;
   box-sizing: border-box;
-  background-color: #fff; }
+  background-color: #fff;
+  z-index: 0; }
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 10;
+  background-color: rgba(0, 0, 0, 0.6); }
+
+.modal-window {
+  padding: 20px;
+  position: absolute;
+  top: 70vh;
+  left: 20%;
+  width: 650px;
+  background-color: #fff;
+  z-index: 11;
+  border-radius: 10px;
+  box-shadow: 0 0 50px 5px rgba(139, 180, 241, 0.3);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start; }
+
+.close-modal {
+  position: absolute;
+  box-sizing: border-box;
+  background: url("../img/close-modal.png") no-repeat;
+  background-position: center;
+  width: 20px;
+  height: 20px;
+  top: 0px;
+  right: 0px;
+  border: 5px solid transparent;
+  text-align: center;
+  cursor: pointer;
+  z-index: 1; }
+  .close-modal_lost {
+    right: 60px; }
 
 .container {
   width: 100%;
@@ -100,8 +140,9 @@ body {
 .menu-sticky {
   position: sticky;
   top: 0;
-  background-color: rgba(255, 255, 255, 0.8);
-  transition: 2s; }
+  background-color: rgba(255, 255, 255, 0.99);
+  transition: 2s;
+  padding-bottom: 20px; }
 
 .article-style {
   margin: -50px 0 20px 0;
@@ -112,12 +153,16 @@ body {
   line-height: 35px;
   color: #000; }
 
+.border-bottom {
+  border-bottom: 1px solid rgba(196, 194, 194, 0.9); }
+
 .menu {
   margin: 0 0 0 0;
   padding: 0 0 0 0;
   display: flex;
   flex-direction: row;
-  justify-content: space-between; }
+  justify-content: space-between;
+  box-shadow: gray; }
   .menu__item {
     font-family: "Roboto", sans-serif;
     font-style: normal;
@@ -182,3 +227,23 @@ body {
   .text-link:hover {
     color: #000;
     text-decoration: none; }
+
+.label-text {
+  margin: 0 0 0 10px;
+  font-family: "Roboto", sans-serif;
+  color: #6F6E6E;
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: 400; }
+  .label-text:last-child {
+    margin-bottom: 20px; }
+
+.label-text__margin-last {
+  margin: 0 0 20px 10px;
+  font-family: "Roboto", sans-serif;
+  color: #6F6E6E;
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: 400; }
+  .label-text__margin-last:last-child {
+    margin-bottom: 20px; }
