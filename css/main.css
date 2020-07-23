@@ -5,9 +5,10 @@
   box-sizing: border-box; }
 
 body {
-  margin: 100px auto;
-  width: 80%;
-  box-sizing: border-box;
+  padding: 100px 0 130px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   background-color: #fff;
   z-index: 0; }
 
@@ -51,17 +52,42 @@ body {
     right: 60px; }
 
 .container {
-  width: 100%;
+  margin: 0 auto;
+  width: 80%;
   margin: 0 0 0 0;
   padding: 0 0 0 0;
   box-sizing: border-box; }
+
+.container_grey {
+  width: 100%;
+  background-color: #949191;
+  padding: 50px 0 80px 0;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center; }
+
+.neit {
+  margin: 15px 0 15px 0;
+  padding: 20px 0 1px 0;
+  background-color: #e7e5e5; }
 
 .header_style {
   margin: 0 0 0 0;
   padding: 0 0 0 0;
   display: flex;
   flex-direction: row;
-  justify-content: flex-start; }
+  justify-content: flex-start;
+  position: relative; }
+  .header_style::before {
+    content: 'Изменено 27.07.2020';
+    position: absolute;
+    top: -50px;
+    left: 0;
+    font-family: "Roboto", sans-serif;
+    color: #949191;
+    font-size: 12px;
+    font-weight: 300; }
 .header__photo {
   position: relative;
   overflow: hidden;
@@ -196,15 +222,15 @@ body {
   flex-direction: row;
   justify-content: flex-start; }
   .block_data {
-    width: 200px;
+    width: 140px;
     margin: 0 20px 0 0;
     padding: 0 0 0 0;
     text-align: right;
     font-family: "Roboto", sans-serif;
     font-style: normal;
     font-weight: 500;
-    font-size: 20px;
-    line-height: 25px;
+    font-size: 17px;
+    line-height: 22px;
     color: #000; }
   .block_text {
     width: 60%;
@@ -215,10 +241,23 @@ body {
     font-size: 20px;
     line-height: 25px;
     color: #000; }
-    .block_text__item:first-child {
-      margin: 0 0 0 -10px; }
   .block_margin {
     margin: 0 0 60px 0; }
+
+.text-additional {
+  color: #949191; }
+  .text-additional_desc {
+    margin: 0 0 0 0;
+    font-weight: 500; }
+
+.footnote {
+  margin: 0 0 0 100px;
+  width: 150px;
+  font-family: "Roboto", sans-serif;
+  color: #000;
+  font-size: 13px;
+  line-height: 15px;
+  font-weight: 400; }
 
 .text-link {
   color: #0d76d8;
@@ -247,3 +286,6 @@ body {
   font-weight: 400; }
   .label-text__margin-last:last-child {
     margin-bottom: 20px; }
+
+.text_bold {
+  font-weight: 500; }
