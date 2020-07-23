@@ -60,7 +60,7 @@ body {
 
 .container_grey {
   width: 100%;
-  background-color: #949191;
+  background-color: #FAF9F9;
   padding: 50px 0 80px 0;
   box-sizing: border-box;
   display: flex;
@@ -70,7 +70,7 @@ body {
 .neit {
   margin: 15px 0 15px 0;
   padding: 20px 0 1px 0;
-  background-color: #e7e5e5; }
+  background-color: #FAF9F9; }
 
 .header_style {
   margin: 0 0 0 0;
