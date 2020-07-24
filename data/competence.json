@@ -1,0 +1,38 @@
+[{
+        "name": "html 5",
+        "stars": 4
+    },
+    {
+        "name": "css 3",
+        "stars": 4
+
+    },
+    {
+        "name": "javascript",
+        "stars": 3
+    },
+    {
+        "name": "scss",
+        "stars": 4
+    },
+    {
+        "name": "git",
+        "stars": 4
+    },
+    {
+        "name": "БЭМ",
+        "stars": 4
+    },
+    {
+        "name": "Adobe Photoshop",
+        "stars": 3
+    },
+    {
+        "name": "avocode",
+        "stars": 4
+    },
+    {
+        "name": "figma",
+        "stars": 4
+    }
+]

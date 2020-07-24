@@ -289,3 +289,8 @@ body {
 
 .text_bold {
   font-weight: 500; }
+
+.comp-items {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(100px, 200px));
+  grid-template-rows: 1fr 1fr; }

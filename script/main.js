@@ -10,6 +10,36 @@ window.onscroll = function() {
     }
 }
 
+async function getJson() {
+    let response = await fetch('data/competence.json');
+    let content = await response.json();
+    let str;
+    let starsPainted = '&#9733;';
+    let starsCircuit = '&#9734;';
+    let compItems = document.getElementById('compitems');
+
+    for (let i = 0; i < content.length; i++) {
+        let obj = content[i].stars;
+        for (let j = 1; j < obj; j++) {
+            starsPainted = starsPainted + '&nbsp;&#9733;';
+        }
+
+        let sCircuit = 5 - obj;
+        for (let j = 1; j < sCircuit; j++) {
+            starsCircuit = starsCircuit + `&nbsp;${starsCircuit}`;
+        }
+
+        str = str + `<div class="comp-item text-margin__bottom_20">
+        <p class="comp-name">${content[i].name}</p>
+        <p class="comp-stars">${starsPainted}&nbsp;${starsCircuit}</p></div>`;
+
+        starsPainted = '&#9733;';
+        starsCircuit = '&#9734;';
+    }
+
+    compItems.insertAdjacentHTML('beforeend', str);
+};
+
 class cvMain {
     constructor() {
         this._init();
@@ -53,7 +83,7 @@ class cvMain {
                         октябрь 2017 &#151; февраль 2019
                     </div>
                     <div class="block_text">
-                        <p class="block_text__item"><span class="text_bold">ООО &laquo;Европапир&raquo;</span>,</p>
+                        <p class="block_text__item"><span class="text_bold">ООО &laquo;Европапир&raquo;</span>.</p>
                         <p class="block_text__item"><span class="text_bold">Сфера:</span> Полиграфия.</p>
                         <p class="block_text__item"><span class="text_bold">Должность:</span> Ведущий менеджер по продажам.</p>
                         <p class="block_text__item"><span class="text_bold">Обязанности:</span> продажа бумаги и печатных материалов типографиям и печатным комплексам. </p>
@@ -65,7 +95,7 @@ class cvMain {
                         июнь 2016 &#151; октябрь 2017
                     </div>
                     <div class="block_text">
-                        <p class="block_text__item"><span class="text_bold">ООО &laquo;ТД Изопринт&raquo;</span>,</p>
+                        <p class="block_text__item"><span class="text_bold">ООО &laquo;ТД Изопринт&raquo;</span>.</p>
                         <p class="block_text__item"><span class="text_bold">Сфера:</span> Полиграфия.</p>
                         <p class="block_text__item"><span class="text_bold">Должность:</span> начальник отдела продаж новых материалов.</p>
                         <p class="block_text__item text-margin__bottom_20"><span class="text_bold">Обязанности:</span> выполнение плана продаж отдела. </p>
@@ -80,7 +110,7 @@ class cvMain {
                         ноябрь 2015 &#151; март 2016
                     </div>
                     <div class="block_text">
-                        <p class="block_text__item"><span class="text_bold">ООО &laquo;Компания Умный дом&raquo;</span>,</p>
+                        <p class="block_text__item"><span class="text_bold">ООО &laquo;Компания Умный дом&raquo;</span>.</p>
                         <p class="block_text__item"><span class="text_bold">Сфера:</span> Реклама.</p>
                         <p class="block_text__item"><span class="text_bold">Должность:</span> менеджер по продажам.</p>
                         <p class="block_text__item"><span class="text_bold">Обязанности:</span> продажа сувенирной продукции крупным федеральным производителям FMCG рынка. </p>
@@ -91,7 +121,7 @@ class cvMain {
                         март 2013 &#151; август 2014
                     </div>
                     <div class="block_text">
-                        <p class="block_text__item"><span class="text_bold">КПК &laquo;Семейный капитал&raquo;</span>,</p>
+                        <p class="block_text__item"><span class="text_bold">КПК &laquo;Семейный капитал&raquo;</span>.</p>
                         <p class="block_text__item"><span class="text_bold">Сфера:</span> Финансы.</p>
                         <p class="block_text__item"><span class="text_bold">Должность:</span> Директор филиала.</p>
                         <p class="block_text__item"><span class="text_bold">Обязанности:</span> создание филиала с 0, подбор сотрудников, привлечение пайщиков. </p>
@@ -103,7 +133,7 @@ class cvMain {
                         июль 2011 &#151; март 2013
                     </div>
                     <div class="block_text">
-                        <p class="block_text__item"><span class="text_bold">КГ &laquo;Модерн Стайл&raquo;</span>,</p>
+                        <p class="block_text__item"><span class="text_bold">КГ &laquo;Модерн Стайл&raquo;</span>.</p>
                         <p class="block_text__item"><span class="text_bold">Сфера:</span> Мебельная фурнитура и комплектующие.</p>
                         <p class="block_text__item"><span class="text_bold">Должность:</span> руководитель учебного центра</p>
                         <p class="block_text__item text-margin__bottom_20"><span class="text_bold">Обязанности:</span> обучение текущих менеджеров компании и филиалов, и ввод в должность новых сотрудников. </p>
@@ -119,7 +149,7 @@ class cvMain {
                         март 2006 &#151; март 2011
                     </div>
                     <div class="block_text">
-                        <p class="block_text__item"><span class="text_bold">ООО &laquo;Искаминт&raquo;</span>,</p>
+                        <p class="block_text__item"><span class="text_bold">ООО &laquo;Искаминт&raquo;</span>.</p>
                         <p class="block_text__item"><span class="text_bold">Сфера:</span> производство изделий из искусственного камня.</p>
                         <p class="block_text__item"><span class="text_bold">Должность:</span> исполнительный директор</p>
                         <p class="block_text__item text-margin__bottom_20"><span class="text_bold">Обязанности:</span> выполнение плана продаж, норматитов по качеству и браку. </p>
@@ -215,3 +245,6 @@ class cvMain {
 }
 
 let forHr = new cvMain();
+window.onload = function() {
+    getJson();
+};
