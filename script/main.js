@@ -10,13 +10,25 @@ window.onscroll = function() {
     }
 }
 
-async function getJson() {
-    let response = await fetch('data/competence.json');
+async function getSkills(typeSkills) {
+    let response;
+    if (typeSkills == 'hard') {
+        response = await fetch('data/competence.json');
+    } else if (typeSkills == 'soft') {
+        response = await fetch('data/softskills.json');
+    }
     let content = await response.json();
-    let str;
+    let str = '';
     let starsPainted = '&#9733;';
     let starsCircuit = '&#9734;';
-    let compItems = document.getElementById('compitems');
+
+    let compItems;
+    if (typeSkills == 'hard') {
+        compItems = document.getElementById('hardcomp');
+    } else if (typeSkills == 'soft') {
+        compItems = document.getElementById('softcomp');
+    }
+
 
     for (let i = 0; i < content.length; i++) {
         let obj = content[i].stars;
@@ -25,8 +37,12 @@ async function getJson() {
         }
 
         let sCircuit = 5 - obj;
-        for (let j = 1; j < sCircuit; j++) {
-            starsCircuit = starsCircuit + `&nbsp;${starsCircuit}`;
+        if (sCircuit > 0) {
+            for (let j = 1; j < sCircuit; j++) {
+                starsCircuit = starsCircuit + `&nbsp;&#9734;`;
+            }
+        } else {
+            starsCircuit = '';
         }
 
         str = str + `<div class="comp-item text-margin__bottom_20">
@@ -39,6 +55,8 @@ async function getJson() {
 
     compItems.insertAdjacentHTML('beforeend', str);
 };
+
+
 
 class cvMain {
     constructor() {
@@ -69,13 +87,26 @@ class cvMain {
                 let neIt = document.getElementById('neit');
                 let neItStr;
                 let resStr;
+                let port_str;
                 let resumDown = document.getElementById('resume');
 
+                let softcomp = document.getElementById('soft-title');
+
+                const MAIN_AREA = document.getElementById('main-area');
+                const ALL_COMP = document.getElementById('allcompetence');
+                const CONTAINER = document.getElementById('container');
+
                 if (menuItem === 'all') {
+                    MAIN_AREA.classList.add('resume-text');
+                    MAIN_AREA.classList.remove('invisible-block');
+                    ALL_COMP.classList.remove('invisible-block');
+                    softcomp.classList.remove('invisible-block');
                     class_sel.classList.remove('menu__item_sel');
                     menuAll.classList.add('menu__item_sel');
                     footnote.classList.add('invisible-block');
+                    getSkills('soft');
 
+                    document.getElementById('portfolio-all').innerHTML = '';
                     neIt.innerHTML = '';
                     neItStr = `<div class="neit">
                     <section class="block block_margin">
@@ -165,16 +196,34 @@ class cvMain {
                     resumDown.insertAdjacentHTML('beforeend', resStr);
 
                 } else if (menuItem === 'charact') {
+                    MAIN_AREA.classList.remove('resume-text');
+                    MAIN_AREA.classList.add('invisible-block');
+                    ALL_COMP.classList.add('invisible-block');
+
+                    document.getElementById('portfolio-all').innerHTML = '';
+
                     class_sel.classList.remove('menu__item_sel');
                     menuCharact.classList.add('menu__item_sel');
                 } else if (menuItem === 'contact') {
+                    MAIN_AREA.classList.remove('resume-text');
+                    MAIN_AREA.classList.add('invisible-block');
+                    ALL_COMP.classList.add('invisible-block');
+
+                    document.getElementById('portfolio-all').innerHTML = '';
+
                     class_sel.classList.remove('menu__item_sel');
                     menuContact.classList.add('menu__item_sel');
                 } else if (menuItem === 'it') {
+                    MAIN_AREA.classList.add('resume-text');
+                    MAIN_AREA.classList.remove('invisible-block');
+                    ALL_COMP.classList.remove('invisible-block');
+
+                    softcomp.classList.add('invisible-block');
                     class_sel.classList.remove('menu__item_sel');
                     menuIt.classList.add('menu__item_sel');
                     footnote.classList.remove('invisible-block');
 
+                    document.getElementById('portfolio-all').innerHTML = '';
                     neIt.innerHTML = '';
                     neItStr = `<section class="block block_margin">
                     <div class="block_data text-additional">
@@ -191,10 +240,86 @@ class cvMain {
                     resumDown.innerHTML = '';
                     resStr = `<p class="block_text__item"><a class="text-link" id="resime-it">Скачать резюме</a> (опыт в ИТ).</p>`;
                     resumDown.insertAdjacentHTML('beforeend', resStr);
+                    document.getElementById('softcomp').innerHTML = '';
 
                 } else if (menuItem === 'portfolio') {
+                    MAIN_AREA.classList.remove('resume-text');
+                    MAIN_AREA.classList.add('invisible-block');
+                    ALL_COMP.classList.add('invisible-block');
                     class_sel.classList.remove('menu__item_sel');
                     portfolio.classList.add('menu__item_sel');
+
+                    port_str = `<div class="portfolio-all" id="portfolio-all">
+                                        <div class="container_corrector">
+                                        <h1 class="h1–corrector">
+                                        <div>«ко</div>
+                                        <div class="flip">[р</div><span class="up-item">Р]</span>
+                                        <div>ектор»</div>
+                                    </h1>
+                                        </div>
+                                        <div class="container portfolio_bottom">
+                                            <div class="portfolio__desc">
+                                                <div class="portfolio_text">«Корректор» &#151; приложение, которое убирает мелкий «мусор» в тексте. Хорошо подходит для постов в соцсетях.</div>
+                                                <div class="portfolio_info">
+                                                    <p class="text-margin__bottom_20">Используются регулярные выражения.</p>
+                                                    <p class="info_link" ><a href="http://corrector.plan-b.studio">http://corrector.plan-b.studio</a></p>
+                                                    <p>Код на <a class="info_link" href="https://github.com/tolkoxa/corrector"> github.com</a></p>
+                                                </div>    
+                                            </div>
+                                        </div>
+                                        <div class="container_bullsandcows">
+                                            <header class="header-style">
+                                                <div class="cow-left"></div>
+                                                <div class="between-top">&nbsp;</div>
+                                                <div class="game-name">
+                                                    <p class="game-name__text_small">Игра</p>
+                                                    <p class="game-name__text_black name__text-laquo">&laquo;Быки
+                                                    <span class="game-name__text_white">и</span>
+                                                    </p>
+                                                    <p class="game-name__text_black">Коровы&raquo;</p>
+                                                </div>
+                                                <div class="between-top">Развивает<br>логичность мышления,<br>счёт и память.</div>
+                                                <div class="cow-right"></div>
+                                            </header>
+                                        </div>
+                                        <div class="container portfolio_bottom">
+                                            <div class="portfolio__desc">
+                                                <div class="portfolio_text">Игра «Быки и коровы» – браузерная игра (SPA) на развитие логичного мышления, счёта и памяти.</div>
+                                                <div class="portfolio_info">
+                                                    <p>Написана только на JS, без библиотек и фреймворков.</p>
+                                                    <p class="text-margin__bottom_20">Работает как SPA–приложение.</p>
+                                                    <p class="info_link" ><a href="http://games.tolkoxa.ru/bullsandcows">http://games.tolkoxa.ru/bullsandcows</a></p>
+                                                    <p>Код на <a  class="info_link" href="https://github.com/tolkoxa/bullsandcows"> github.com</a></p>
+                                                </div>    
+                                            </div>
+                                        </div>
+                                        <div class="container_bullsandcows">
+                                            <header class="header-style">
+                                                <div class="cow-left"></div>
+                                                <div class="between-top">&nbsp;</div>
+                                                <div class="game-name">
+                                                    <p class="game-name__text_small">Игра</p>
+                                                    <p class="game-name__text_black name__text-laquo">&laquo;Быки
+                                                    <span class="game-name__text_white">и</span>
+                                                    </p>
+                                                    <p class="game-name__text_black">Коровы&raquo;</p>
+                                                </div>
+                                                <div class="between-top">Развивает<br>логичность мышления,<br>счёт и память.</div>
+                                                <div class="cow-right"></div>
+                                            </header>
+                                        </div>
+                                        <div class="container portfolio_bottom">
+                                            <div class="portfolio__desc">
+                                                <div class="portfolio_text">Игра «Быки и коровы» – браузерная игра (SPA) на развитие логичного мышления, счёта и памяти.</div>
+                                                <div class="portfolio_info">
+                                                    <p class="text-margin__bottom_20">Написана только на JS, без библиотек и фреймворков.</p>
+                                                    <p class="info_link" ><a href="http://games.tolkoxa.ru/bullsandcows">http://games.tolkoxa.ru/bullsandcows</a></p>
+                                                    <p>Код на <a  class="info_link" href="https://github.com/tolkoxa/bullsandcows"> github.com</a></p>
+                                                </div>    
+                                            </div>
+                                        </div>
+                                    </div>`;
+                    CONTAINER.insertAdjacentHTML('afterend', port_str);
                 }
             }
         })
@@ -246,5 +371,5 @@ class cvMain {
 
 let forHr = new cvMain();
 window.onload = function() {
-    getJson();
+    getSkills('hard');
 };

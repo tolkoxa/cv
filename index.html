@@ -42,7 +42,7 @@
                 <a class="menu__item" name="menu" data-menu="contact" id="menu-contact">Контактная информация</a>
             </section>
         </div>
-        <div class="resume-text" id="main-area">
+        <div class="resume-text invisible-block" id="main-area">
             <section class="block block_margin">
                 <div class="block_data">
                     Образование:
@@ -110,6 +110,10 @@
                     <p class="block_text__item"><span class="text_bold">Должность:</span> ведущий специалист–программист.</p>
                     <p class="block_text__item"><span class="text_bold">Обязанности:</span> разработка АРМ для ГИС &laquo;Народонаселение&raquo;, создание сайта организации.</p>
                 </div>
+                <div class="footnote">
+                    <p class="text-margin__bottom_20">Информационная система разрабатывалась как эксперимент. В результате появились МФЦ, а позже центры &laquo;Мои документы&raquo;</p>
+                    <p>Стек: PL/SQL, СУБД Oracle.</p>
+                </div>
             </section>
             <section class="block block_margin">
                 <div class="block_data">
@@ -142,13 +146,23 @@
             </section>
         </div>
     </div>
-    <div class="container_grey">
+    <div class="container_grey" id="allcompetence">
         <div class="container">
+            <div class="comp-title text-margin__bottom_20">Компетенции</div>
             <div class="competence">
-                <div class="comp-title">
-                    Компетенции
+                <div class="hard-copm">
+                    <div class="skills-title">
+                        Hard skills
+                    </div>
+                    <div class="comp-hard" id="hardcomp">
+                    </div>
                 </div>
-                <div class="comp-items" id="compitems">
+                <div class="soft-copm">
+                    <div class="skills-title invisible-block" id="soft-title">
+                        Soft skills
+                    </div>
+                    <div class="comp-soft" id="softcomp">
+                    </div>
                 </div>
             </div>
         </div>

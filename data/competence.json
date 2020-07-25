@@ -12,19 +12,27 @@
         "stars": 3
     },
     {
+        "name": "vue.js",
+        "stars": 1
+    },
+    {
+        "name": "json",
+        "stars": 3
+    },
+    {
         "name": "scss",
         "stars": 4
     },
     {
-        "name": "git",
+        "name": "git (терминал)",
         "stars": 4
     },
     {
-        "name": "БЭМ",
+        "name": "бэм",
         "stars": 4
     },
     {
-        "name": "Adobe Photoshop",
+        "name": "adobe photoshop",
         "stars": 3
     },
     {
