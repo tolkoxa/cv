@@ -293,28 +293,21 @@ class cvMain {
                                                 </div>    
                                             </div>
                                         </div>
-                                        <div class="container_bullsandcows">
-                                            <header class="header-style">
-                                                <div class="cow-left"></div>
-                                                <div class="between-top">&nbsp;</div>
-                                                <div class="game-name">
-                                                    <p class="game-name__text_small">Игра</p>
-                                                    <p class="game-name__text_black name__text-laquo">&laquo;Быки
-                                                    <span class="game-name__text_white">и</span>
-                                                    </p>
-                                                    <p class="game-name__text_black">Коровы&raquo;</p>
-                                                </div>
-                                                <div class="between-top">Развивает<br>логичность мышления,<br>счёт и память.</div>
-                                                <div class="cow-right"></div>
-                                            </header>
+                                        <div class="container_randomizer">
+                                        <p class="main-header-logo-name">RANDOMIZER</p>
+                                        <p class="main-header-logo-desc">СЛУЧАЙНОСТИ НЕ СЛУЧАЙНЫ</p>
                                         </div>
                                         <div class="container portfolio_bottom">
                                             <div class="portfolio__desc">
-                                                <div class="portfolio_text">Игра «Быки и коровы» – браузерная игра (SPA) на развитие логичного мышления, счёта и памяти.</div>
+                                                <div class="portfolio_text">Генератор случайностей из различных категорий: от фильмов до поздравлений.
+                                                <p>И конечно же, генератор случайных чисел.</p></div>
                                                 <div class="portfolio_info">
-                                                    <p class="text-margin__bottom_20">Написана только на JS, без библиотек и фреймворков.</p>
-                                                    <p class="info_link" ><a href="http://games.tolkoxa.ru/bullsandcows">http://games.tolkoxa.ru/bullsandcows</a></p>
-                                                    <p>Код на <a  class="info_link" href="https://github.com/tolkoxa/bullsandcows"> github.com</a></p>
+                                                    <p>Проект «Randomizer» выполнен в рамках обучения</p>
+                                                    <p>в GeekBrains (стажировка). Сайт работает в формате SPA.</p>
+                                                    <p>Завершена только дестопная версия.</p>
+                                                    <p class="text-margin__bottom_20">Разработан на php, js и mysql.</p>
+                                                    <p class="info_link" ><a href="http://randomizer.me">http://randomizer.me</a></p>
+                                                    <p>Код на <a  class="info_link" href="https://github.com/tolkoxa/randomizer"> github.com</a></p>
                                                 </div>    
                                             </div>
                                         </div>
