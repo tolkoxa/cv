@@ -88,17 +88,18 @@ class cvMain {
                 let neItStr;
                 let resStr;
                 let port_str;
+                let port_str2;
                 let resumDown = document.getElementById('resume');
 
                 let softcomp = document.getElementById('soft-title');
 
-                const MAIN_AREA = document.getElementById('main-area');
+                const RESUME_AREA = document.getElementById('resume-area');
                 const ALL_COMP = document.getElementById('allcompetence');
-                const CONTAINER = document.getElementById('container');
+                const MAIN_AREA = document.getElementById('main-area');
 
                 if (menuItem === 'all') {
-                    MAIN_AREA.classList.add('resume-text');
-                    MAIN_AREA.classList.remove('invisible-block');
+                    RESUME_AREA.classList.add('resume__div');
+                    RESUME_AREA.classList.remove('invisible-block');
                     ALL_COMP.classList.remove('invisible-block');
                     softcomp.classList.remove('invisible-block');
                     class_sel.classList.remove('menu__item_sel');
@@ -196,8 +197,8 @@ class cvMain {
                     resumDown.insertAdjacentHTML('beforeend', resStr);
 
                 } else if (menuItem === 'charact') {
-                    MAIN_AREA.classList.remove('resume-text');
-                    MAIN_AREA.classList.add('invisible-block');
+                    RESUME_AREA.classList.remove('resume__div');
+                    RESUME_AREA.classList.add('invisible-block');
                     ALL_COMP.classList.add('invisible-block');
 
                     document.getElementById('portfolio-all').innerHTML = '';
@@ -205,8 +206,8 @@ class cvMain {
                     class_sel.classList.remove('menu__item_sel');
                     menuCharact.classList.add('menu__item_sel');
                 } else if (menuItem === 'contact') {
-                    MAIN_AREA.classList.remove('resume-text');
-                    MAIN_AREA.classList.add('invisible-block');
+                    RESUME_AREA.classList.remove('resume__div');
+                    RESUME_AREA.classList.add('invisible-block');
                     ALL_COMP.classList.add('invisible-block');
 
                     document.getElementById('portfolio-all').innerHTML = '';
@@ -214,8 +215,8 @@ class cvMain {
                     class_sel.classList.remove('menu__item_sel');
                     menuContact.classList.add('menu__item_sel');
                 } else if (menuItem === 'it') {
-                    MAIN_AREA.classList.add('resume-text');
-                    MAIN_AREA.classList.remove('invisible-block');
+                    RESUME_AREA.classList.add('resume__div');
+                    RESUME_AREA.classList.remove('invisible-block');
                     ALL_COMP.classList.remove('invisible-block');
 
                     softcomp.classList.add('invisible-block');
@@ -243,8 +244,8 @@ class cvMain {
                     document.getElementById('softcomp').innerHTML = '';
 
                 } else if (menuItem === 'portfolio') {
-                    MAIN_AREA.classList.remove('resume-text');
-                    MAIN_AREA.classList.add('invisible-block');
+                    RESUME_AREA.classList.remove('resume__div');
+                    RESUME_AREA.classList.add('invisible-block');
                     ALL_COMP.classList.add('invisible-block');
                     class_sel.classList.remove('menu__item_sel');
                     portfolio.classList.add('menu__item_sel');
@@ -262,7 +263,7 @@ class cvMain {
                                                 <div class="portfolio_text">«Корректор» &#151; приложение, которое убирает мелкий «мусор» в тексте. Хорошо подходит для постов в соцсетях.</div>
                                                 <div class="portfolio_info">
                                                     <p class="text-margin__bottom_20">Используются регулярные выражения.</p>
-                                                    <p class="info_link" ><a href="http://corrector.plan-b.studio">http://corrector.plan-b.studio</a></p>
+                                                    <p class="info_link" ><a href="http://corrector.tolkoxa.ru">http://corrector.tolkoxa.ru</a></p>
                                                     <p>Код на <a class="info_link" href="https://github.com/tolkoxa/corrector"> github.com</a></p>
                                                 </div>    
                                             </div>
@@ -287,7 +288,8 @@ class cvMain {
                                                 <div class="portfolio_text">Игра «Быки и коровы» – браузерная игра (SPA) на развитие логичного мышления, счёта и памяти.</div>
                                                 <div class="portfolio_info">
                                                     <p>Написана только на JS, без библиотек и фреймворков.</p>
-                                                    <p class="text-margin__bottom_20">Работает как SPA–приложение.</p>
+                                                    <p>Работает как SPA–приложение.</p>
+                                                    <p class="text-margin__bottom_20">Завершена только десктопная версия.</p>
                                                     <p class="info_link" ><a href="http://games.tolkoxa.ru/bullsandcows">http://games.tolkoxa.ru/bullsandcows</a></p>
                                                     <p>Код на <a  class="info_link" href="https://github.com/tolkoxa/bullsandcows"> github.com</a></p>
                                                 </div>    
@@ -304,7 +306,7 @@ class cvMain {
                                                 <div class="portfolio_info">
                                                     <p>Проект «Randomizer» выполнен в рамках обучения</p>
                                                     <p>в GeekBrains (стажировка). Сайт работает в формате SPA.</p>
-                                                    <p>Завершена только дестопная версия.</p>
+                                                    <p>Завершена только десктопная версия.</p>
                                                     <p class="text-margin__bottom_20">Разработан на php, js и mysql.</p>
                                                     <p class="info_link" ><a href="http://randomizer.me">http://randomizer.me</a></p>
                                                     <p>Код на <a  class="info_link" href="https://github.com/tolkoxa/randomizer"> github.com</a></p>
@@ -312,7 +314,7 @@ class cvMain {
                                             </div>
                                         </div>
                                     </div>`;
-                    CONTAINER.insertAdjacentHTML('afterend', port_str);
+                    MAIN_AREA.insertAdjacentHTML('afterend', port_str);
                 }
             }
         })

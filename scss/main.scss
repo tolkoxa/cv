@@ -90,7 +90,7 @@ body {
         justify-content: flex-start;
         position: relative;
         &::before {
-            content: 'Изменено 27.07.2020';
+            content: 'Изменено 31.08.2020';
             position: absolute;
             top: -50px;
             left: 0;
@@ -241,7 +241,14 @@ body {
     }
 }
 
-.resume-text {
+.main-area-text {
+    margin: 0 0 0 0;
+    padding: 0 0 0 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.resume__div {
     margin: 0 0 0 0;
     padding: 0 0 0 0;
     display: flex;
