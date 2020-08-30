@@ -12,6 +12,13 @@ body {
   background-color: #fff;
   z-index: 0; }
 
+.main-content {
+  width: 100%;
+  margin: a auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center; }
+
 .overlay {
   position: fixed;
   top: 0;
@@ -21,12 +28,16 @@ body {
   z-index: 10;
   background-color: rgba(0, 0, 0, 0.6); }
 
+.fixed {
+  position: fixed; }
+
 .modal-window {
-  padding: 20px;
-  position: absolute;
-  top: 70vh;
-  left: 20%;
-  width: 650px;
+  top: 150px;
+  position: fixed;
+  margin: 0 auto;
+  width: 610px;
+  height: 500px;
+  overflow: auto;
   background-color: #fff;
   z-index: 11;
   border-radius: 10px;
@@ -36,12 +47,13 @@ body {
   justify-content: flex-start; }
 
 .close-modal {
-  position: absolute;
+  position: fixed;
   box-sizing: border-box;
   background: url("../img/close-modal.png") no-repeat;
+  background-size: 80px 80px;
   background-position: center;
-  width: 20px;
-  height: 20px;
+  width: 50px;
+  height: 50px;
   top: 0px;
   right: 0px;
   border: 5px solid transparent;
@@ -51,15 +63,18 @@ body {
   .close-modal_lost {
     right: 60px; }
 
-.container {
+.container_center {
   margin: 0 auto;
   width: 80%;
-  margin: 0 0 0 0;
-  padding: 0 0 0 0;
-  box-sizing: border-box; }
+  padding-bottom: 20px; }
+
+.container_full {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center; }
 
 .container_grey {
-  width: 100%;
   background-color: #FAF9F9;
   padding: 50px 0 80px 0;
   box-sizing: border-box;
@@ -164,20 +179,25 @@ body {
   display: none; }
 
 .menu-sticky {
+  height: 110px;
   position: sticky;
-  top: 0;
+  top: 0px;
   background-color: rgba(255, 255, 255, 0.99);
   transition: 2s;
-  padding-bottom: 20px; }
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  z-index: 1; }
 
 .article-style {
-  margin: -50px 0 20px 0;
+  margin: 0 0 20px 0;
   font-family: "Roboto", sans-serif;
   font-style: normal;
   font-weight: 500;
   font-size: 30px;
   line-height: 35px;
-  color: #000; }
+  color: #000;
+  background-color: rgba(255, 255, 255, 0.99); }
 
 .border-bottom {
   border-bottom: 1px solid rgba(196, 194, 194, 0.9); }
@@ -188,7 +208,8 @@ body {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  box-shadow: gray; }
+  box-shadow: gray;
+  background-color: rgba(255, 255, 255, 0.99); }
   .menu__item {
     font-family: "Roboto", sans-serif;
     font-style: normal;

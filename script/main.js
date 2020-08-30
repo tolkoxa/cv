@@ -1,12 +1,38 @@
+let vm = new Vue({
+    el: '#app',
+    data:{
+        v_it: true,
+        v_neit: false,
+        // v_portfolio: false,
+        // v_charact: false,
+        // v_contact: false,
+        content_show: '',
+        content_it_p1: '',
+        content_it_p2: '',
+        content_neit: '',
+        content_portfolio: '',
+        content_charact: '',
+        content_contact: '',
+        sticky: false,
+        overLay: "document.getElementById('overlay')"
+    },
+    methods:{
+        showmodal: function () {
+            forhr.showModal();
+        }
+    }
+})
+
 window.onscroll = function() {
+    let scrollPix = 360;
     let scrollTop = window.pageYOffset ? window.pageYOffset : (document.documentElement.scrollTop ? document.documentElement.scrollTop : document.body.scrollTop);
 
-    if (scrollTop >= 365) {
-        document.getElementById('menu-title').classList.remove('invisible-block');
-        document.querySelector('.menu-sticky').classList.add('border-bottom');
-    } else if (scrollTop <= 365) {
-        document.getElementById('menu-title').classList.add('invisible-block');
-        document.querySelector('.menu-sticky').classList.remove('border-bottom');
+    if (scrollTop >= scrollPix) {
+        vm.sticky = true;
+        document.getElementById('sticky_plate').classList.add('border-bottom');
+    } else if (scrollTop <= scrollPix) {
+        vm.sticky = false;
+        document.getElementById('sticky_plate').classList.remove('border-bottom');
     }
 }
 
@@ -65,12 +91,119 @@ class cvMain {
 
     _init() {
         this.menuClick();
-        this.showModal();
+        // this.showModal();
+        vm.content_it_p1 = `<div class="resume__div container_center" id="resume-area">
+                <section class="block block_margin">
+                    <div class="block_data">
+                        Образование:
+                    </div>
+                    <div class="block_text">
+                        <p class="block_text__item">НОУ &laquo;<a class="text-link" href="http://taom.ru">Тольяттинская академия управления</a>&raquo; (Тольятти, 2003 г.),</p>
+                        <p class="block_text__item">факультет &laquo;Уравления и финансов&raquo;,</p>
+                        <p class="block_text__item">специальность &laquo;Информационные системы в экономике&raquo;.</p>
+                    </div>
+                </section>
+                <section class="block block_margin">
+                    <div class="block_data">
+                        декабрь 2019 &#151; февраль 2020
+                    </div>
+                    <div class="block_text">
+                        <p class="block_text__item">Образовательный портал &laquo;<a class="text-link" href="http://geekbrains.ru">GeekBrains</a>&raquo;, стажировка.</p>
+                        <p class="block_text__item">Product owner, team leader, дизайнер и верстальщик.</p>
+                        <p class="block_text__item">В рамках курса придумал проект, который разработали совсемтно с командой (другие студенты). Проект &#151; генератор случайных вариантов из различных категорий &#151; Randomizer (<a class="text-link" href="http://randomizer.me"
+                                target="_blanck">http://randomizer.me</a>).</p>
+                        <p class="block_text__item">Генератор работает как SPA–приложение.</p>
+                    </div>
+                </section>
+                <section class="block block_margin">
+                    <div class="block_data">
+                        сентябрь 2019 &#151; май 2020
+                    </div>
+                    <div class="block_text">
+                        <p class="block_text__item">Образовательный портал &laquo;<a class="text-link" href="http://geekbrains.ru">GeekBrains</a>&raquo;.</p>
+                        <p class="block_text__item">Обучение по професии frontend–разработчик.</p>
+                        <p class="block_text__item">Основные курсы: html5/css3, javascript 1–й и 2–й уровени, reactjs.</p>
+                        <a class="menu__item" id="cert">Посмотреть сертификаты</a>.
+                    </div>
+                </section>`;
+                
+                vm.content_neit = `<div id="neit">
+                    <section class="block block_margin">
+                        <div class="block_data text-additional">
+                            март 2006 &#151; февраль 2019
+                        </div>
+                        <div class="block_text text-additional">
+                            <p class="text-additional_desc">Опыт, не относящийся к ИТ.</p>
+                            <p class="block_text__item">В это время был менеджером по продажам, коммерческим и исполнительным директором, руководителем филиала и тренером по ораторскому мастерству и публичным выступлениям.</p>
+                        </div>
+                        <div class="footnote">Посмотрите раздел &laquo;<a class="text-link" name="menu" data-menu="all" id="menu-all">Весь опыт</a>&raquo;. Там видно, почему я смогу работать практически в любой команде.</div>
+                    </section></div>`;
+                
+                vm.content_it_p2 = `<section class="block block_margin">
+                    <div class="block_data">
+                        январь 2005 &#151; март 2006
+                    </div>
+                    <div class="block_text">
+                        <p class="block_text__item"><span class="text_bold">ООО &laquo;Эксклюзивные решения&raquo;</span>.</p>
+                        <p class="block_text__item"><span class="text_bold">Продукт:</span> ПО, информационные системы.</p>
+                        <p class="block_text__item"><span class="text_bold">Должность:</span> менеджер по продвижению.</p>
+                        <p class="block_text__item"><span class="text_bold">Обязанности:</span> проведение мероприятий по привлечению клиентов (выставки, рассылки, переговоры с ключевыми клиентами), разработка презентационных материалов в поддержку продуктов. Разработал сайт компании.
+                        </p>
+                    </div>
+                </section>
+                <section class="block block_margin">
+                    <div class="block_data">
+                        июнь 2001 &#151; декабрь 2004
+                    </div>
+                    <div class="block_text">
+                        <p class="block_text__item"><span class="text_bold">МУ &laquo;Центр социальных выплат г. Тольятти&raquo;</span>.</p>
+                        <p class="block_text__item"><span class="text_bold">Продукт:</span> городская информационная система.</p>
+                        <p class="block_text__item"><span class="text_bold">Должность:</span> Главный специалист–технолог.</p>
+                        <p class="block_text__item  text-margin__bottom_20"><span class="text_bold">Обязанности:</span> разработка технологических процессов для АРМ в ГИС &laquo;Народонаселение&raquo;, по принципу &laquo;единого социального окна&raquo;.</p>
+                        <p class="block_text__item"><span class="text_bold">Должность:</span> ведущий специалист–программист.</p>
+                        <p class="block_text__item"><span class="text_bold">Обязанности:</span> разработка АРМ для ГИС &laquo;Народонаселение&raquo;, создание сайта организации.</p>
+                    </div>
+                    <div class="footnote">
+                        <p class="text-margin__bottom_20">Информационная система разрабатывалась как эксперимент. В результате появились МФЦ, а позже центры &laquo;Мои документы&raquo;</p>
+                        <p>Стек: PL/SQL, СУБД Oracle.</p>
+                    </div>
+                </section>
+                <section class="block block_margin">
+                    <div class="block_data">
+                        ноябрь 1999 &#151; апрель 2000
+                    </div>
+                    <div class="block_text">
+                        <p class="block_text__item"><span class="text_bold">ЗАО ТК &laquo;АИС.Т&raquo;</span>.</p>
+                        <p class="block_text__item"><span class="text_bold">Продукт:</span> Телефония, доступ в интернет.</p>
+                        <p class="block_text__item"><span class="text_bold">Должность:</span> web–мастер.</p>
+                        <p class="block_text__item"><span class="text_bold">Обязанности:</span> внесение изменений на сайт компании и внутренний портал.</p>
+                    </div>
+                </section>
+                <section class="block block_margin">
+                    <div class="block_data">
+                        июнь 1999 &#151; август 1999
+                    </div>
+                    <div class="block_text">
+                        <p class="block_text__item"><span class="text_bold">НОУ &laquo;Тольяттинская академия управления&raquo; </span>(кафедра ИТ, оплачиваемая стажировка).</p>
+                        <p class="block_text__item"><span class="text_bold">Продукт:</span> ИС для управленческой игры.</p>
+                        <p class="block_text__item"><span class="text_bold">Должность:</span> программист.</p>
+                        <p class="block_text__item"><span class="text_bold">Обязанности:</span> разработка рабочих мест администратора, игрока и главного менеджера.</p>
+                    </div>
+                </section>
+                <section class="block block_margin">
+                    <div class="block_data">
+                    </div>
+                    <div class="block_text" id="resume">
+                        <p class="block_text__item"><a class="text-link" id="resime-it">Скачать резюме</a> (опыт в ИТ).</p>
+                    </div>
+                </section>
+                </div>`;
+                    vm.content_show = vm.content_it_p1 + vm.content_neit + vm.content_it_p2;
     }
 
     menuClick() {
-        let MENU = document.getElementById('container');
-        let footnote = document.querySelector('.footnote');
+        let MENU = document.getElementById('app');
+        // let footnote = document.querySelector('.footnote');
 
         MENU.addEventListener('click', (evt) => {
             let e = evt.target
@@ -88,7 +221,6 @@ class cvMain {
                 let neItStr;
                 let resStr;
                 let port_str;
-                let port_str2;
                 let resumDown = document.getElementById('resume');
 
                 let softcomp = document.getElementById('soft-title');
@@ -98,19 +230,23 @@ class cvMain {
                 const MAIN_AREA = document.getElementById('main-area');
 
                 if (menuItem === 'all') {
-                    RESUME_AREA.classList.add('resume__div');
-                    RESUME_AREA.classList.remove('invisible-block');
-                    ALL_COMP.classList.remove('invisible-block');
-                    softcomp.classList.remove('invisible-block');
+                    vm.v_it = false;
+                    vm.v_neit = true;
+                    
+                    console.log('Весь опыт');
+                    // RESUME_AREA.classList.add('resume__div');
+                    // RESUME_AREA.classList.remove('invisible-block');
+                    // ALL_COMP.classList.remove('invisible-block');
+                    // softcomp.classList.remove('invisible-block');
                     class_sel.classList.remove('menu__item_sel');
                     menuAll.classList.add('menu__item_sel');
-                    footnote.classList.add('invisible-block');
+                    // footnote.classList.add('invisible-block');
                     getSkills('soft');
 
-                    document.getElementById('portfolio-all').innerHTML = '';
-                    neIt.innerHTML = '';
-                    neItStr = `<div class="neit">
-                    <section class="block block_margin">
+                    // document.getElementById('portfolio-all').innerHTML = '';
+                    // neIt.innerHTML = '';
+                    vm.content_neit = `
+                    <div class="neit"><section class="block block_margin">
                     <div class="block_data">
                         октябрь 2017 &#151; февраль 2019
                     </div>
@@ -136,7 +272,6 @@ class cvMain {
                     </div>
                     <div class="footnote">Создал новый отдел продаж в компании, нанял сотрудников. Дополнительно: верстал письма для рассылок, разрабатывал новый сайт компании.</div>
                 </section>
-
                 <section class="block block_margin">
                     <div class="block_data">
                         ноябрь 2015 &#151; март 2016
@@ -190,8 +325,8 @@ class cvMain {
                     </div>
                     <div class="footnote">Дополнительно разрабатывал сайт компании и франшизного проекта.</div>
                 </section></div>`;
-                    neIt.insertAdjacentHTML('afterbegin', neItStr);
-
+                    // neIt.insertAdjacentHTML('afterbegin', neItStr);
+                    vm.content_show = vm.content_it_p1 + vm.content_neit + vm.content_it_p2;
                     resumDown.innerHTML = '';
                     resStr = `<p class="block_text__item"><a class="text-link" id="resime-it">Скачать резюме</a> (весь опыт).</p>`;
                     resumDown.insertAdjacentHTML('beforeend', resStr);
@@ -215,6 +350,21 @@ class cvMain {
                     class_sel.classList.remove('menu__item_sel');
                     menuContact.classList.add('menu__item_sel');
                 } else if (menuItem === 'it') {
+                    vm.v_it = true;
+                    vm.v_neit = false;
+                    vm.content_neit = `<section class="block block_margin">
+                         <div class="block_data text-additional">
+                             март 2006 &#151; февраль 2019
+                         </div>
+                         <div class="block_text text-additional">
+                             <p class="text-additional_desc">Опыт, не относящийся к ИТ.</p>
+                             <p class="block_text__item">В это время был менеджером по продажам, коммерческим и исполнительным директором, руководителем филиала и тренером по ораторскому мастерству и публичным выступлениям.</p>
+                         </div>
+                         <div class="footnote">Посмотрите раздел &laquo;<a class="text-link" name="menu" data-menu="all" id="menu-all">Весь опыт</a>&raquo;. Там видно, почему я смогу работать практически в любой команде.</div>
+                     </section>`;
+                    vm.content_show = vm.content_it_p1 + vm.content_neit + vm.content_it_p2;
+                    
+                    
                     RESUME_AREA.classList.add('resume__div');
                     RESUME_AREA.classList.remove('invisible-block');
                     ALL_COMP.classList.remove('invisible-block');
@@ -222,26 +372,25 @@ class cvMain {
                     softcomp.classList.add('invisible-block');
                     class_sel.classList.remove('menu__item_sel');
                     menuIt.classList.add('menu__item_sel');
-                    footnote.classList.remove('invisible-block');
+                    // footnote.classList.remove('invisible-block');
 
-                    document.getElementById('portfolio-all').innerHTML = '';
-                    neIt.innerHTML = '';
-                    neItStr = `<section class="block block_margin">
-                    <div class="block_data text-additional">
-                        март 2006 &#151; февраль 2019
-                    </div>
-                    <div class="block_text text-additional">
-                        <p class="text-additional_desc">Опыт, не относящийся к ИТ.</p>
-                        <p class="block_text__item">В это время был менеджером по продажам, коммерческим и исполнительным директором, руководителем филиала и тренером по ораторскому мастерству и публичным выступлениям.</p>
-                    </div>
-                    <div class="footnote">Посмотрите раздел &laquo;<a class="text-link" name="menu" data-menu="all" id="menu-all">Весь опыт</a>&raquo;. Там видно, почему я смогу работать практически в любой команде.</div>
-                </section>`;
-                    neIt.insertAdjacentHTML('afterbegin', neItStr);
+                    // document.getElementById('portfolio-all').innerHTML = '';
+                    // neIt.innerHTML = '';
+                //     neItStr = `<section class="block block_margin">
+                //     <div class="block_data text-additional">
+                //         март 2006 &#151; февраль 2019
+                //     </div>
+                //     <div class="block_text text-additional">
+                //         <p class="text-additional_desc">Опыт, не относящийся к ИТ.</p>
+                //         <p class="block_text__item">В это время был менеджером по продажам, коммерческим и исполнительным директором, руководителем филиала и тренером по ораторскому мастерству и публичным выступлениям.</p>
+                //     </div>
+                //     <div class="footnote">Посмотрите раздел &laquo;<a class="text-link" name="menu" data-menu="all" id="menu-all">Весь опыт</a>&raquo;. Там видно, почему я смогу работать практически в любой команде.</div>
+                // </section>`;
+                //     neIt.insertAdjacentHTML('afterbegin', neItStr);
 
                     resumDown.innerHTML = '';
                     resStr = `<p class="block_text__item"><a class="text-link" id="resime-it">Скачать резюме</a> (опыт в ИТ).</p>`;
                     resumDown.insertAdjacentHTML('beforeend', resStr);
-                    document.getElementById('softcomp').innerHTML = '';
 
                 } else if (menuItem === 'portfolio') {
                     RESUME_AREA.classList.remove('resume__div');
@@ -320,9 +469,11 @@ class cvMain {
         })
     }
 
-    showModal() {
+   showmodal() {
+        document.getElementById('cert').addEventListener('click', ()=> {
         let overLay = document.getElementById('overlay');
         let modalWin = document.getElementById('modal-window');
+        // window.scrollTo(0, 0);
         let str = `<a class="close-modal" id="close"></a>
         <img src="img/cert/2116749_652449.jpg" width="auto" height="auto" alt="Курс: &laquo;HTML/CSS. Интерактивный курс&raquo;">
         <p class="label-text">Курс: &laquo;HTML/CSS. Интерактивный курс&raquo;, 30.09.2019</p>
@@ -343,7 +494,6 @@ class cvMain {
         <p class="label-text">Курс: &laquo;React JS&raquo;, 07.06.2020</p>
         <p class="label-text">№0874823</p>`;
 
-        document.getElementById('cert').addEventListener('click', () => {
             overLay.classList.remove('invisible-block');
             modalWin.classList.remove('invisible-block');
             document.querySelector('#modal-window').insertAdjacentHTML("beforeend", str);
@@ -355,7 +505,7 @@ class cvMain {
             document.getElementById('overlay').addEventListener('click', () => {
                 this.closeModal();
             });
-        })
+        });
     }
     closeModal() {
         document.getElementById('overlay').classList.add('invisible-block');
@@ -364,7 +514,8 @@ class cvMain {
     }
 }
 
-let forHr = new cvMain();
+let forhr = new cvMain();
 window.onload = function() {
     getSkills('hard');
+    forhr.showmodal();  
 };
