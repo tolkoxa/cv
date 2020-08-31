@@ -3,9 +3,10 @@ let vm = new Vue({
     data:{
         v_it: true,
         v_neit: false,
-        // v_portfolio: false,
-        // v_charact: false,
-        // v_contact: false,
+        v_anyit: true,
+        v_portfolio: false,
+        v_charact: false,
+        v_contact: false,
         content_show: '',
         content_it_p1: '',
         content_it_p2: '',
@@ -91,7 +92,6 @@ class cvMain {
 
     _init() {
         this.menuClick();
-        // this.showModal();
         vm.content_it_p1 = `<div class="resume__div container_center" id="resume-area">
                 <section class="block block_margin">
                     <div class="block_data">
@@ -127,7 +127,7 @@ class cvMain {
                     </div>
                 </section>`;
                 
-                vm.content_neit = `<div id="neit">
+        vm.content_neit = `<div id="neit">
                     <section class="block block_margin">
                         <div class="block_data text-additional">
                             март 2006 &#151; февраль 2019
@@ -139,7 +139,7 @@ class cvMain {
                         <div class="footnote">Посмотрите раздел &laquo;<a class="text-link" name="menu" data-menu="all" id="menu-all">Весь опыт</a>&raquo;. Там видно, почему я смогу работать практически в любой команде.</div>
                     </section></div>`;
                 
-                vm.content_it_p2 = `<section class="block block_margin">
+        vm.content_it_p2 = `<section class="block block_margin">
                     <div class="block_data">
                         январь 2005 &#151; март 2006
                     </div>
@@ -193,9 +193,6 @@ class cvMain {
                 <section class="block block_margin">
                     <div class="block_data">
                     </div>
-                    <div class="block_text" id="resume">
-                        <p class="block_text__item"><a class="text-link" id="resime-it">Скачать резюме</a> (опыт в ИТ).</p>
-                    </div>
                 </section>
                 </div>`;
                     vm.content_show = vm.content_it_p1 + vm.content_neit + vm.content_it_p2;
@@ -210,12 +207,12 @@ class cvMain {
 
             if (e.name === 'menu') {
                 let menuItem = e.dataset.menu;
-                let class_sel = document.querySelector('.menu__item_sel');
-                let menuIt = document.getElementById('menu-it');
-                let menuAll = document.getElementById('menu-all');
-                let menuCharact = document.getElementById('menu-charact');
-                let menuContact = document.getElementById('menu-contact');
-                let portfolio = document.getElementById('portfolio');
+                // let class_sel = document.querySelector('.menu__item_sel');
+                // let menuIt = document.getElementById('menu-it');
+                // let menuAll = document.getElementById('menu-all');
+                // let menuCharact = document.getElementById('menu-charact');
+                // let menuContact = document.getElementById('menu-contact');
+                // let portfolio = document.getElementById('portfolio');
 
                 let neIt = document.getElementById('neit');
                 let neItStr;
@@ -232,15 +229,16 @@ class cvMain {
                 if (menuItem === 'all') {
                     vm.v_it = false;
                     vm.v_neit = true;
-                    
-                    console.log('Весь опыт');
-                    // RESUME_AREA.classList.add('resume__div');
-                    // RESUME_AREA.classList.remove('invisible-block');
-                    // ALL_COMP.classList.remove('invisible-block');
-                    // softcomp.classList.remove('invisible-block');
-                    class_sel.classList.remove('menu__item_sel');
-                    menuAll.classList.add('menu__item_sel');
+                    vm.v_anyit = true;
+                    vm.v_portfolio = false;
+                    vm.v_charact = false;
+                    vm.v_contact = false;
+                    window.scrollTo(0, 900);
+
+                    // class_sel.classList.remove('menu__item_sel');
+                    // menuAll.classList.add('menu__item_sel');
                     // footnote.classList.add('invisible-block');
+                    // getSkills('hard');
                     getSkills('soft');
 
                     // document.getElementById('portfolio-all').innerHTML = '';
@@ -327,31 +325,52 @@ class cvMain {
                 </section></div>`;
                     // neIt.insertAdjacentHTML('afterbegin', neItStr);
                     vm.content_show = vm.content_it_p1 + vm.content_neit + vm.content_it_p2;
-                    resumDown.innerHTML = '';
-                    resStr = `<p class="block_text__item"><a class="text-link" id="resime-it">Скачать резюме</a> (весь опыт).</p>`;
-                    resumDown.insertAdjacentHTML('beforeend', resStr);
+                    // resumDown.innerHTML = '';
+                    // resStr = `<p class="block_text__item"><a class="text-link" id="resime-it">Скачать резюме</a> (весь опыт).</p>`;
+                    // resumDown.insertAdjacentHTML('beforeend', resStr);
 
                 } else if (menuItem === 'charact') {
+                    vm.v_it = false;
+                    vm.v_neit = false;
+                    vm.v_anyit = false;
+                    vm.v_portfolio = false;
+                    vm.v_charact = true;
+                    vm.v_contact = false;
+                    window.scrollTo(0, 400);
+                    vm.content_show = "Общая характеристика";
                     RESUME_AREA.classList.remove('resume__div');
                     RESUME_AREA.classList.add('invisible-block');
                     ALL_COMP.classList.add('invisible-block');
 
                     document.getElementById('portfolio-all').innerHTML = '';
 
-                    class_sel.classList.remove('menu__item_sel');
-                    menuCharact.classList.add('menu__item_sel');
+                    // class_sel.classList.remove('menu__item_sel');
+                    // menuCharact.classList.add('menu__item_sel');
                 } else if (menuItem === 'contact') {
+                    vm.v_it = false;
+                    vm.v_neit = false;
+                    vm.v_anyit = false;
+                    vm.v_portfolio = false;
+                    vm.v_charact = false;
+                    vm.v_contact = true;
+                    window.scrollTo(0, 400);
+                    vm.content_show = "Контактная информация";
                     RESUME_AREA.classList.remove('resume__div');
                     RESUME_AREA.classList.add('invisible-block');
                     ALL_COMP.classList.add('invisible-block');
 
                     document.getElementById('portfolio-all').innerHTML = '';
 
-                    class_sel.classList.remove('menu__item_sel');
-                    menuContact.classList.add('menu__item_sel');
+                    // class_sel.classList.remove('menu__item_sel');
+                    // menuContact.classList.add('menu__item_sel');
                 } else if (menuItem === 'it') {
+                    window.scrollTo(0, 400);
                     vm.v_it = true;
                     vm.v_neit = false;
+                    vm.v_anyit = true;
+                    vm.v_portfolio = false;
+                    vm.v_charact = false;
+                    vm.v_contact = false;
                     vm.content_neit = `<section class="block block_margin">
                          <div class="block_data text-additional">
                              март 2006 &#151; февраль 2019
@@ -363,43 +382,32 @@ class cvMain {
                          <div class="footnote">Посмотрите раздел &laquo;<a class="text-link" name="menu" data-menu="all" id="menu-all">Весь опыт</a>&raquo;. Там видно, почему я смогу работать практически в любой команде.</div>
                      </section>`;
                     vm.content_show = vm.content_it_p1 + vm.content_neit + vm.content_it_p2;
-                    
+                    getSkills('hard');
                     
                     RESUME_AREA.classList.add('resume__div');
                     RESUME_AREA.classList.remove('invisible-block');
                     ALL_COMP.classList.remove('invisible-block');
 
                     softcomp.classList.add('invisible-block');
-                    class_sel.classList.remove('menu__item_sel');
-                    menuIt.classList.add('menu__item_sel');
-                    // footnote.classList.remove('invisible-block');
-
-                    // document.getElementById('portfolio-all').innerHTML = '';
-                    // neIt.innerHTML = '';
-                //     neItStr = `<section class="block block_margin">
-                //     <div class="block_data text-additional">
-                //         март 2006 &#151; февраль 2019
-                //     </div>
-                //     <div class="block_text text-additional">
-                //         <p class="text-additional_desc">Опыт, не относящийся к ИТ.</p>
-                //         <p class="block_text__item">В это время был менеджером по продажам, коммерческим и исполнительным директором, руководителем филиала и тренером по ораторскому мастерству и публичным выступлениям.</p>
-                //     </div>
-                //     <div class="footnote">Посмотрите раздел &laquo;<a class="text-link" name="menu" data-menu="all" id="menu-all">Весь опыт</a>&raquo;. Там видно, почему я смогу работать практически в любой команде.</div>
-                // </section>`;
-                //     neIt.insertAdjacentHTML('afterbegin', neItStr);
-
-                    resumDown.innerHTML = '';
-                    resStr = `<p class="block_text__item"><a class="text-link" id="resime-it">Скачать резюме</a> (опыт в ИТ).</p>`;
-                    resumDown.insertAdjacentHTML('beforeend', resStr);
+                    // class_sel.classList.remove('menu__item_sel');
+                    // menuIt.classList.add('menu__item_sel');                 
 
                 } else if (menuItem === 'portfolio') {
-                    RESUME_AREA.classList.remove('resume__div');
-                    RESUME_AREA.classList.add('invisible-block');
-                    ALL_COMP.classList.add('invisible-block');
-                    class_sel.classList.remove('menu__item_sel');
-                    portfolio.classList.add('menu__item_sel');
-
-                    port_str = `<div class="portfolio-all" id="portfolio-all">
+                    vm.v_it = false;
+                    vm.v_neit = false;
+                    vm.v_anyit = false;
+                    vm.v_portfolio = true;
+                    vm.v_charact = false;
+                    vm.v_contact = false;
+                    vm.content_show = '';
+                    window.scrollTo(0, 400);
+                    // RESUME_AREA.classList.remove('resume__div');
+                    // RESUME_AREA.classList.add('invisible-block');
+                    // ALL_COMP.classList.add('invisible-block');
+                    // class_sel.classList.remove('menu__item_sel');
+                    // portfolio.classList.add('menu__item_sel');
+                
+                    vm.content_portfolio = `<div class="portfolio-all" id="portfolio-all">
                                         <div class="container_corrector">
                                         <h1 class="h1–corrector">
                                         <div>«ко</div>
@@ -463,7 +471,7 @@ class cvMain {
                                             </div>
                                         </div>
                                     </div>`;
-                    MAIN_AREA.insertAdjacentHTML('afterend', port_str);
+                    vm.content_show = vm.content_portfolio;
                 }
             }
         })
@@ -474,7 +482,7 @@ class cvMain {
         let overLay = document.getElementById('overlay');
         let modalWin = document.getElementById('modal-window');
         // window.scrollTo(0, 0);
-        let str = `<a class="close-modal" id="close"></a>
+        let str = `<a class="close-modal" id="close">╳</a>
         <img src="img/cert/2116749_652449.jpg" width="auto" height="auto" alt="Курс: &laquo;HTML/CSS. Интерактивный курс&raquo;">
         <p class="label-text">Курс: &laquo;HTML/CSS. Интерактивный курс&raquo;, 30.09.2019</p>
         <p class="label-text__margin-last">№0652449</p>

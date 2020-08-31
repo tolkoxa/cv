@@ -37,18 +37,19 @@
                     Кто вы, Андрей Халимоненко?
                 </section>
                 <section class="menu" id="menuItems">
-                    <a class="menu__item menu__item_sel" name="menu" data-menu="it" id="menu-it">Опыт в ИТ</a>
-                    <a class="menu__item" name="menu" data-menu="all" id="menu-all">Весь опыт</a>
-                    <a class="menu__item" name="menu" data-menu="portfolio" id="portfolio">Портфолио</a>
-                    <a class="menu__item" name="menu" data-menu="charact" id="menu-charact">Общая характеристика</a>
-                    <a class="menu__item" name="menu" data-menu="contact" id="menu-contact">Контактная информация</a>
+                    <a class="menu__item" v-bind:class="{ menu__item_sel: v_it }" name="menu" data-menu="it" id="menu-it">Опыт в ИТ</a>
+                    <a class="menu__item" v-bind:class="{ menu__item_sel: v_neit }" name="menu" data-menu="all" id="menu-all">Весь опыт</a>
+                    <a class="menu__item" v-bind:class="{ menu__item_sel: v_portfolio }" name="menu" data-menu="portfolio" id="portfolio">Портфолио</a>
+                    <a class="menu__item" v-bind:class="{ menu__item_sel: v_charact }" name="menu" data-menu="charact" id="menu-charact">Общая характеристика</a>
+                    <a class="menu__item" v-bind:class="{ menu__item_sel: v_contact }" name="menu" data-menu="contact" id="menu-contact">Контактная информация</a>
                 </section>
             </div>
         </div>
+
         <div class="main-area-text container_full" id="main-area" v-html="content_show">
         </div>
         <!-- </div> -->
-        <div class="container_grey container_full" id="allcompetence">
+        <div class="container_grey container_full" id="allcompetence" v-if="v_anyit">
             <div class="container_center">
                 <div class="comp-title text-margin__bottom_20">Компетенции</div>
                 <div class="competence">
