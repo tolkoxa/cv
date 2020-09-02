@@ -123,7 +123,7 @@ class cvMain {
                         <p class="block_text__item">Образовательный портал &laquo;<a class="text-link" href="http://geekbrains.ru">GeekBrains</a>&raquo;.</p>
                         <p class="block_text__item">Обучение по професии frontend–разработчик.</p>
                         <p class="block_text__item">Основные курсы: html5/css3, javascript 1–й и 2–й уровени, reactjs.</p>
-                        <a class="menu__item" id="cert">Посмотреть сертификаты</a>.
+                        <a class="menu__item" id="cert" v-on:click="showmodal">Посмотреть сертификаты</a>.
                     </div>
                 </section>`;
                 
@@ -200,33 +200,15 @@ class cvMain {
 
     menuClick() {
         let MENU = document.getElementById('app');
-        // let footnote = document.querySelector('.footnote');
 
         MENU.addEventListener('click', (evt) => {
             let e = evt.target
 
             if (e.name === 'menu') {
                 let menuItem = e.dataset.menu;
-                // let class_sel = document.querySelector('.menu__item_sel');
-                // let menuIt = document.getElementById('menu-it');
-                // let menuAll = document.getElementById('menu-all');
-                // let menuCharact = document.getElementById('menu-charact');
-                // let menuContact = document.getElementById('menu-contact');
-                // let portfolio = document.getElementById('portfolio');
-
-                let neIt = document.getElementById('neit');
-                let neItStr;
-                let resStr;
-                let port_str;
-                let resumDown = document.getElementById('resume');
-
-                let softcomp = document.getElementById('soft-title');
-
-                const RESUME_AREA = document.getElementById('resume-area');
-                const ALL_COMP = document.getElementById('allcompetence');
-                const MAIN_AREA = document.getElementById('main-area');
 
                 if (menuItem === 'all') {
+                    if (!vm.v_it) {getSkills('hard');};
                     vm.v_it = false;
                     vm.v_neit = true;
                     vm.v_anyit = true;
@@ -235,14 +217,8 @@ class cvMain {
                     vm.v_contact = false;
                     window.scrollTo(0, 900);
 
-                    // class_sel.classList.remove('menu__item_sel');
-                    // menuAll.classList.add('menu__item_sel');
-                    // footnote.classList.add('invisible-block');
-                    // getSkills('hard');
                     getSkills('soft');
 
-                    // document.getElementById('portfolio-all').innerHTML = '';
-                    // neIt.innerHTML = '';
                     vm.content_neit = `
                     <div class="neit"><section class="block block_margin">
                     <div class="block_data">
@@ -323,11 +299,8 @@ class cvMain {
                     </div>
                     <div class="footnote">Дополнительно разрабатывал сайт компании и франшизного проекта.</div>
                 </section></div>`;
-                    // neIt.insertAdjacentHTML('afterbegin', neItStr);
-                    vm.content_show = vm.content_it_p1 + vm.content_neit + vm.content_it_p2;
-                    // resumDown.innerHTML = '';
-                    // resStr = `<p class="block_text__item"><a class="text-link" id="resime-it">Скачать резюме</a> (весь опыт).</p>`;
-                    // resumDown.insertAdjacentHTML('beforeend', resStr);
+                this.showmodal();
+                vm.content_show = vm.content_it_p1 + vm.content_neit + vm.content_it_p2;
 
                 } else if (menuItem === 'charact') {
                     vm.v_it = false;
@@ -338,14 +311,7 @@ class cvMain {
                     vm.v_contact = false;
                     window.scrollTo(0, 400);
                     vm.content_show = "Общая характеристика";
-                    RESUME_AREA.classList.remove('resume__div');
-                    RESUME_AREA.classList.add('invisible-block');
-                    ALL_COMP.classList.add('invisible-block');
 
-                    document.getElementById('portfolio-all').innerHTML = '';
-
-                    // class_sel.classList.remove('menu__item_sel');
-                    // menuCharact.classList.add('menu__item_sel');
                 } else if (menuItem === 'contact') {
                     vm.v_it = false;
                     vm.v_neit = false;
@@ -355,16 +321,10 @@ class cvMain {
                     vm.v_contact = true;
                     window.scrollTo(0, 400);
                     vm.content_show = "Контактная информация";
-                    RESUME_AREA.classList.remove('resume__div');
-                    RESUME_AREA.classList.add('invisible-block');
-                    ALL_COMP.classList.add('invisible-block');
 
-                    document.getElementById('portfolio-all').innerHTML = '';
-
-                    // class_sel.classList.remove('menu__item_sel');
-                    // menuContact.classList.add('menu__item_sel');
                 } else if (menuItem === 'it') {
                     window.scrollTo(0, 400);
+                    if (!vm.v_anyit) {getSkills('hard');};
                     vm.v_it = true;
                     vm.v_neit = false;
                     vm.v_anyit = true;
@@ -382,15 +342,6 @@ class cvMain {
                          <div class="footnote">Посмотрите раздел &laquo;<a class="text-link" name="menu" data-menu="all" id="menu-all">Весь опыт</a>&raquo;. Там видно, почему я смогу работать практически в любой команде.</div>
                      </section>`;
                     vm.content_show = vm.content_it_p1 + vm.content_neit + vm.content_it_p2;
-                    getSkills('hard');
-                    
-                    RESUME_AREA.classList.add('resume__div');
-                    RESUME_AREA.classList.remove('invisible-block');
-                    ALL_COMP.classList.remove('invisible-block');
-
-                    softcomp.classList.add('invisible-block');
-                    // class_sel.classList.remove('menu__item_sel');
-                    // menuIt.classList.add('menu__item_sel');                 
 
                 } else if (menuItem === 'portfolio') {
                     vm.v_it = false;
@@ -401,11 +352,6 @@ class cvMain {
                     vm.v_contact = false;
                     vm.content_show = '';
                     window.scrollTo(0, 400);
-                    // RESUME_AREA.classList.remove('resume__div');
-                    // RESUME_AREA.classList.add('invisible-block');
-                    // ALL_COMP.classList.add('invisible-block');
-                    // class_sel.classList.remove('menu__item_sel');
-                    // portfolio.classList.add('menu__item_sel');
                 
                     vm.content_portfolio = `<div class="portfolio-all" id="portfolio-all">
                                         <div class="container_corrector">
@@ -477,36 +423,64 @@ class cvMain {
         })
     }
 
-   showmodal() {
+    showmodal() {
+        console.log('modal');
         document.getElementById('cert').addEventListener('click', ()=> {
-        let overLay = document.getElementById('overlay');
-        let modalWin = document.getElementById('modal-window');
-        // window.scrollTo(0, 0);
-        let str = `<a class="close-modal" id="close">╳</a>
-        <img src="img/cert/2116749_652449.jpg" width="auto" height="auto" alt="Курс: &laquo;HTML/CSS. Интерактивный курс&raquo;">
-        <p class="label-text">Курс: &laquo;HTML/CSS. Интерактивный курс&raquo;, 30.09.2019</p>
-        <p class="label-text__margin-last">№0652449</p>
-        <img src="img/cert/2116749_669069.jpg">
-        <p class="label-text">Курс: &laquo;HTML5 и CSS3&raquo;, 09.11.2019</p>
-        <p class="label-text__margin-last">№0669069</p>
-        <img src="img/cert/2116749_693465.jpg">
-        <p class="label-text">Курс: &laquo;JavaScript. Уровень 1&raquo;, 15.12.2019</p>
-        <p class="label-text__margin-last">№0693465</p>
-        <img src="img/cert/2116749_724925.jpg">
-        <p class="label-text">Курс: &laquo;Стажировка GeekBrains (web)&raquo;, 23.02.2020</p>
-        <p class="label-text__margin-last">№0724925</p>
-        <img src="img/cert/2116749_734529.jpg">
-        <p class="label-text">Курс: &laquo;JavaScript. Уровень 2&raquo;, 13.03.2020</p>
-        <p class="label-text__margin-last">№0734529</p>
-        <img src="img/cert/2116749_874823.jpg">
-        <p class="label-text">Курс: &laquo;React JS&raquo;, 07.06.2020</p>
-        <p class="label-text">№0874823</p>`;
+            console.log('click--');
+            let overLay = document.getElementById('overlay');
+            let modalWin = document.getElementById('modal-window');
+
+            let certArrAll = [
+                {
+                    id: '2116749_652449',
+                    text: 'Курс: «HTML/CSS. Интерактивный курс»',
+                    date: '30.09.2019',
+                    number: '0652449'
+                },
+                {
+                    id: '2116749_669069',
+                    text: 'Курс: «HTML5 и CSS3»',
+                    date: '09.11.2019',
+                    number: '0669069'
+                },
+                {
+                    id: '2116749_693465',
+                    text: 'Курс: «JavaScript. Уровень 1»',
+                    date: '15.12.2019',
+                    number: '0693465'
+                },
+                {
+                    id: '2116749_724925',
+                    text: 'Курс: «Стажировка GeekBrains (web)»',
+                    date: '23.02.2020',
+                    number: '0724925'
+                },
+                {
+                    id: '2116749_734529',
+                    text: 'Курс: «JavaScript. Уровень 2»',
+                    date: '13.03.2020',
+                    number: '0734529'
+                },
+                {
+                    id: '2116749_874823',
+                    text: 'Курс: «React JS»',
+                    date: '07.06.2020',
+                    number: '0874823'
+                },
+            ];
+        
+            let str = `<a class="close-modal" id="close-modal">╳</a>`;
+            certArrAll.forEach((elem)=> {
+                str = str + `<img src="img/cert/${elem.id}.jpg" width="auto" height="auto" alt="${elem.text}"><p class="label-text">${elem.text}, ${elem.date}</p><p class="label-text__margin-last">№${elem.number}</p>`;
+            });
+
+            console.log(certArrAll);
 
             overLay.classList.remove('invisible-block');
             modalWin.classList.remove('invisible-block');
             document.querySelector('#modal-window').insertAdjacentHTML("beforeend", str);
 
-            document.getElementById('close').addEventListener('click', () => {
+            document.getElementById('close-modal').addEventListener('click', () => {
                 this.closeModal();
             });
 
