@@ -453,11 +453,33 @@ body {
 
 .portfolio_text {
     width: 40%;
+}
+
+.portfolio_text_item {
     font-family: $font-main;
     font-size: 20px;
     font-weight: 400;
     line-height: 24px;
     color: $text-main_color;
+    padding: 0 0 15px 0;
+}
+
+.charact-text {
+    width: 65%;
+    font-family: $font-main;
+    font-size: 20px;
+    line-height: 24px;
+    color: $text-main_color;
+}
+
+.charact_text_title {
+    font-weight: 500;
+    padding: 0 0 0 0;
+}
+
+.charact_text_item {
+    font-weight: 400;
+    padding: 0 0 20px 0;
 }
 
 .portfolio_info {

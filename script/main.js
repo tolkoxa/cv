@@ -10,6 +10,7 @@ let vm = new Vue({
         content_show: '',
         content_it_p1: '',
         content_it_p2: '',
+        content_neit_grey: '',
         content_neit: '',
         content_portfolio: '',
         content_charact: '',
@@ -127,7 +128,7 @@ class cvMain {
                     </div>
                 </section>`;
                 
-        vm.content_neit = `<div id="neit">
+        vm.content_neit_grey = `<div id="neit">
                     <section class="block block_margin">
                         <div class="block_data text-additional">
                             март 2006 &#151; февраль 2019
@@ -195,7 +196,7 @@ class cvMain {
                     </div>
                 </section>
                 </div>`;
-                    vm.content_show = vm.content_it_p1 + vm.content_neit + vm.content_it_p2;
+                    vm.content_show = vm.content_it_p1 + vm.content_neit_grey + vm.content_it_p2;
                     let timerId = setTimeout(this.showmodal, 1000);
                     
     }
@@ -314,7 +315,88 @@ class cvMain {
                     vm.v_contact = false;
                     window.scrollTo(0, 400);
 
-                    vm.content_charact = ``;
+                    vm.content_charact = `
+                    <div class="container_center portfolio_bottom charact-text">
+                        <p class="charact_text_title">
+                            Родился в Тольятти
+                        </p>
+                        <p class="charact_text_item">
+                            Родился и вырос в Тольятти (Самарская область). Жил там до 35 лет.
+                            С 9 лет рос без отца (погиб в автокатастрофе).portfolio_text_item
+                        </p>
+                        <p class="charact_text_title">
+                            Пел в опере &laquo;Снегурочка&raquo;
+                        </p>
+                        <p class="charact_text_item">
+                            Параллельно образовательной ходил в музыкальную школу по классу &laquo;фортепиано&raquo;. Обе школы закончил без троек.
+                        </p>
+                        <p class="charact_text_item">
+                            В последний год занятия хором, участвовал в постановке оперы &laquo;Снегурочка&raquo;, играл роль Деда Мороза (один из главных персонажей).
+                        </p>
+                        <p class="charact_text_title">
+                            Печатаю 10–ю пальцами и слепым методом
+                        </p>
+                        <p class="charact_text_item">
+                            На первом курсе Академии у нас была очень сильная подготовка по работе с MS Office. Мы изучали все программы, входящие в пакет. У нас были зачёты и контрольные мероприятия.
+                        </p>
+                        <p class="charact_text_item">
+                            Это сейчас звучит дико, но мои одноклассники, поступившие в другие ВУЗы, сдавали часть работ от руки. У нас же, любые работы нужно было сдавать в печатном виде. Так я и научился быстро печатать, десятью пальцами. А потом ещё и &laquo;слепым&raquo; методом.
+                        </p>
+                        <p class="charact_text_title">
+                            Web–мастер на 2–м курсе
+                        </p>
+                        <p class="charact_text_item">
+                            Работать начал на втором курсе, это была вечерняя работа на полставки. После третьего курса я уже работал полноценный рабочий день. Система обучения в Академии была построена таким образом, что вторую половину обучения мы уже полноценно работали, а с 19 часов учились.
+                        </p>
+                        <p class="charact_text_item">
+                            Дипломную работу писал по своим рабочим задачам. Тема моего диплома: &laquo;Внедрение информационной системы назначения городского социального пособия и субсидий на оплату жилья и коммунальных услуг по принципу &laquo;единого социального окна&raquo;.
+                        </p>
+                        <p class="charact_text_title">
+                            Тренер по ораторскому мастерству и публичным выступлениям
+                        </p>
+                        <p class="charact_text_item">
+                            В 2014 году стал тренером–лицензиатом Университета риторики и ораторского мастерства (г.Москва). Провёл свой первый тренинг за деньги.
+                        </p>
+                        <p class="charact_text_item">
+                            Стал &laquo;штатным&raquo; спикером конференций журнала &laquo;Генеральный директор&raquo;. Мой личный рекорд аудитории: 500+ человек.
+                        </p>
+                        <p class="charact_text_title">
+                            20 км за 2 часа
+                        </p>
+                        <p class="charact_text_item">
+                            В рамках подготовки к марафону пробежал 20 км за 2 часа. В марафоне не участвовал из–за травмы.
+                        </p>
+                        <p class="charact_text_title">
+                            Книги, кино и музыка
+                        </p>
+                        <p class="charact_text_item">
+                            Люблю читать книги, в основном деловую литератур и на развитие личности. В 2013 году прочитал и прослушал 53 книги.
+                        </p>
+                        <p class="charact_text_item">
+                            Очень люблю смотреть кино. Самый любимый жанр &#151; фильмы с неожиданным финалом. Сериалы люблю и &laquo;ненавижу&lquo; одновременно. Если очень интересно, то могу смотреть сразу много серий.
+                        </p>
+                        <p class="charact_text_item">
+                            Музыку слушаю постоянно. В конце месяца составляю плейл–лист песен, которые были интересны в уходящем месяце. Делюсь ссылками в соцсетях и своём канале.
+                        </p>
+                        <p class="charact_text_title">
+                            Баскетбол
+                        </p>
+                        <p class="charact_text_item">
+                            Со второго класса безоговорочно люблю баскетбол. Играл за школу в городском турнире.
+                        </p>
+                        <p class="charact_text_title">
+                            Верю и доверяю людям
+                        </p>
+                        <p class="charact_text_item">
+                            Доверяю и верю человеку, пока он не убедит меня в обратном. Достаточно терпелив и с понимание отношусь к поступкам и поведению людей. Часто могу понять причинно–следственные связи в поступках.
+                        </p>
+                        <p class="charact_text_title">
+                            Жена, дети
+                        </p>
+                        <p class="charact_text_item">
+                            Женат. Воспитываю двоих детей: 9 лет и 2 года.
+                        </p>
+                    </div>`;
 
                     vm.content_show = vm.content_charact;
 
@@ -327,7 +409,52 @@ class cvMain {
                     vm.v_contact = true;
                     window.scrollTo(0, 400);
 
-                    vm.content_contact = ``;
+                    vm.content_contact = `
+                    <div class="container_center portfolio_bottom charact-text">
+                        <p class="charact_text_title">
+                            Телефон
+                        </p>
+                        <p class="charact_text_item">
+                            <a href="tel:+79817106380">8 981 710–63–80</a>
+                        </p>
+                        <p class="charact_text_title">
+                            Почта
+                        </p>
+                        <p class="charact_text_item">
+                            <a href="mailto:tolkoxa@ya.ru">tolkoxa@ya.ru</a>
+                        </p>
+                        <p class="charact_text_title">
+                            Телеграм
+                        </p>
+                        <p class="charact_text_item">
+                            <a href="http://t.me/pitchtrener">@pitchtrener</a>
+                        </p>
+                        <p class="charact_text_title">
+                            Github
+                        </p>
+                        <p class="charact_text_item">
+                            <a href="https://github.com/tolkoxa">https://github.com/tolkoxa</a>
+                        </p>
+                        <p class="charact_text_title">
+                            Соцсети
+                        </p>
+                        <p class="charact_text_item">
+                            <a href="https://vk.com/pitchtrener">Вконтакте</a>
+                        </p>
+                        <p class="charact_text_item">
+                            <a href="https://facebook.com/pitchtrener">Facebook</a>
+                        </p>
+                        <p class="charact_text_item">
+                            <a href="https://instagram.com/pitchtrener">Инстаграм</a>
+                        </p>
+                        <p class="charact_text_item">
+                            <a href="https://twitter.com/pitchtrener">Twitter</a>
+                        </p>
+                        <p class="charact_text_item">
+                            <a href="https://t.me/tolkoxa">Телеграм–канал</a>
+                        </p>
+                    </div>
+                    `;
 
                     vm.content_show = vm.content_contact;
 
@@ -340,17 +467,8 @@ class cvMain {
                     vm.v_portfolio = false;
                     vm.v_charact = false;
                     vm.v_contact = false;
-                    vm.content_neit = `<section class="block block_margin">
-                         <div class="block_data text-additional">
-                             март 2006 &#151; февраль 2019
-                         </div>
-                         <div class="block_text text-additional">
-                             <p class="text-additional_desc">Опыт, не относящийся к ИТ.</p>
-                             <p class="block_text__item">В это время был менеджером по продажам, коммерческим и исполнительным директором, руководителем филиала и тренером по ораторскому мастерству и публичным выступлениям.</p>
-                         </div>
-                         <div class="footnote">Посмотрите раздел &laquo;<a class="text-link" name="menu" data-menu="all" id="menu-all">Весь опыт</a>&raquo;. Там видно, почему я смогу работать практически в любой команде.</div>
-                     </section>`;
-                    vm.content_show = vm.content_it_p1 + vm.content_neit + vm.content_it_p2;
+                    
+                    vm.content_show = vm.content_it_p1 + vm.content_neit_grey + vm.content_it_p2;
                     this.timerId = setTimeout(this.showmodal, 1000);
 
 
@@ -375,7 +493,8 @@ class cvMain {
                             </div>
                             <div class="container_center portfolio_bottom">
                                 <div class="portfolio__desc">
-                                    <div class="portfolio_text">«Корректор» &#151; приложение, которое убирает мелкий «мусор» в тексте. Хорошо подходит для постов в соцсетях.</div>
+                                    <div class="portfolio_text">
+                                    <p class="portfolio_text_item">«Корректор» &#151; приложение, которое убирает мелкий «мусор» в тексте. Хорошо подходит для постов в соцсетях.</p></div>
                                     <div class="portfolio_info">
                                         <p class="text-margin__bottom_20">Используются регулярные выражения.</p>
                                         <p class="info_link">
@@ -402,7 +521,8 @@ class cvMain {
                             </div>
                             <div class="container_center portfolio_bottom">
                                 <div class="portfolio__desc">
-                                    <div class="portfolio_text">Игра «Быки и коровы» – браузерная игра (SPA) на развитие логичного мышления, счёта и памяти.</div>
+                                    <div class="portfolio_text">
+                                    <p class="portfolio_text_item">Игра «Быки и коровы» – браузерная игра (SPA) на развитие логичного мышления, счёта и памяти.</p></div>
                                     <div class="portfolio_info">
                                         <p>Написана только на JS, без библиотек и фреймворков.</p>
                                         <p>Работает как SPA–приложение.</p>
@@ -417,7 +537,8 @@ class cvMain {
                             </div>
                                 <div class="container_center portfolio_bottom">
                                     <div class="portfolio__desc">
-                                        <div class="portfolio_text">Музыкальные ответы на часто задаваемый вопрос &laquo;Когда?&raquo; и на просьбу, от неприятного человека.
+                                        <div class="portfolio_text">
+                                        <p class="portfolio_text_item">Музыкальные ответы на часто задаваемый вопрос &laquo;Когда?&raquo; и на просьбу, от неприятного человека.</p>
                                     </div>
                                     <div class="portfolio_info">
                                         <p class="info_link"><a href="http://answer.tolkoxa.ru">http://answer.tolkoxa.ru</a></p>    
@@ -438,7 +559,8 @@ class cvMain {
                             </div>
                             <div class="container_center portfolio_bottom">
                                 <div class="portfolio__desc">
-                                    <div class="portfolio_text">Задай вопрос &laquo;вселенной&raquo; и получи ответ. Задай вопрос на который можно ответить только «да» или «нет».
+                                    <div class="portfolio_text">
+                                    <p class="portfolio_text_item">Задай вопрос &laquo;вселенной&raquo; и получи ответ. Задай вопрос на который можно ответить только «да» или «нет».</p>
                                     </div>
                                     <div class="portfolio_info">
                                         <p>Используется Vue (локально).</p>
@@ -448,22 +570,19 @@ class cvMain {
                                 </div>
                             </div>    
                             <div class="container_portfolio container_cv">
-                                <header class="header_cv container_center">
-                                    <div class="header__photo"></div>
-                                    <div class="header__desc">
-                                        <p class="header__name text-margin__bottom_20">Андрей Халимоненко</p>
-                                        <p class="header__text">Краткое описание жизни</p>
-                                        <p class="header__text text-margin__bottom_20">и профессиональных навыков</p>
-                                    </div>
-                                </header>
+                                <p class="main-header-logo-name">Небольшие задачи на JS</p>
                             </div>
                             <div class="container_center portfolio_bottom">
                                 <div class="portfolio__desc">
-                                    <div class="portfolio_text"></div>
+                                    <div class="portfolio_text">
+                                    <p class="portfolio_text_item">Как–то преподаватель нас &laquo;озадачил&raquo; тем, что мало кто задумывался и писал код на решение встроенных математических операций.  Например умножение или возведение в степень.</p>
+                                    <p class="portfolio_text_item">Я решил сделать такой раздел. В начале написал код простых операций, потом поиск простых чисел.</p>
+                                    <p class="portfolio_text_item">Раздел будет пополняться в будущем.</p>
+                                    </div>
                                     <div class="portfolio_info">
-                                        <p>Используется Vue (локально).</p>
-                                        <p class="info_link"><a href="http://cv.tolkoxa.ru">http://cv.tolkoxa.ru</a></p>
-                                        <p>Код на <a  class="info_link" href="https://github.com/tolkoxa/cv"> github.com</a></p>
+                                        <p>Чистый JS</p>
+                                        <p class="info_link"><a href="http://js-tasks.tolkoxa.ru/">http://js-tasks.tolkoxa.ru/</a></p>
+                                        <p>Код на <a  class="info_link" href="https://github.com/tolkoxa/JS-Tasks"> github.com</a></p>
                                     </div>    
                                 </div>
                             </div>
@@ -473,8 +592,9 @@ class cvMain {
                             </div>
                                 <div class="container_center portfolio_bottom">
                                     <div class="portfolio__desc">
-                                        <div class="portfolio_text">Генератор случайностей из различных категорий: от фильмов до поздравлений.
-                                        <p>И конечно же, генератор случайных чисел.</p>
+                                        <div class="portfolio_text">
+                                        <p class="portfolio_text_item">Генератор случайностей из различных категорий: от фильмов до поздравлений.</p>
+                                        <p class="portfolio_text_item">И конечно же, генератор случайных чисел.</p>
                                     </div>
                                     <div class="portfolio_info">
                                         <p>Проект «Randomizer» выполнен в рамках обучения</p>
