@@ -96,7 +96,7 @@ body {
   justify-content: flex-start;
   position: relative; }
   .header_style::before {
-    content: 'Изменено 31.08.2020';
+    content: 'Изменено 03.09.2020';
     position: absolute;
     top: -50px;
     left: 0;
@@ -104,6 +104,13 @@ body {
     color: #949191;
     font-size: 12px;
     font-weight: 300; }
+.header_cv {
+  margin: 0 0 0 0;
+  padding: 0 0 0 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  position: relative; }
 .header__photo {
   position: relative;
   overflow: hidden;
@@ -400,15 +407,7 @@ body {
   line-height: 20px; }
 
 .container_corrector {
-  width: 100%;
-  height: 350px;
-  background-color: #ebbd2f;
-  padding: 50px 0 80px 0;
-  box-sizing: border-box;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center; }
+  background-color: #ebbd2f; }
 
 .h1–corrector {
   margin: 0 0 0 0;
@@ -449,17 +448,6 @@ body {
 
 .portfolio_bottom {
   margin: 0 0 120px 0; }
-
-.container_bullsandcows {
-  width: 100%;
-  height: 350px;
-  background-color: #8bb4f1;
-  padding: 50px 0 80px 0;
-  box-sizing: border-box;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center; }
 
 .header-style {
   width: 100%;
@@ -516,16 +504,42 @@ body {
 .name__text-laquo {
   margin-left: -47px; }
 
-.container_randomizer {
+.container_portfolio {
   width: 100%;
   height: 350px;
-  background-color: #2a2b2c;
   padding: 50px 0 80px 0;
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center; }
+
+.container_randomizer {
+  background-color: #2a2b2c; }
+
+.container_bullsandcows {
+  background-color: #8bb4f1; }
+
+.container_cv {
+  background-color: #ffe002; }
+
+.container_answers {
+  background-image: url(../img/answer_bg.jpg);
+  background-position: bottom right;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: #000; }
+
+.text__title {
+  margin: 0 0 50px 0;
+  padding: 0 0 0 0;
+  color: #000;
+  font-size: 50px;
+  text-transform: uppercase;
+  /* line-height: 1rem; */
+  font-weight: 500;
+  text-align: left; }
 
 .main-header-logo-name {
   margin: 0 0 35px 0;
@@ -545,3 +559,29 @@ body {
   font-size: 25px;
   font-weight: 400;
   line-height: 11.62px; }
+
+.top-logo {
+  margin: 0 0 30px 0;
+  padding: 0 0 0 0;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start; }
+
+.logo-text {
+  margin: 0 0 0 -10px;
+  display: block;
+  font-family: Scada;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 15vmax;
+  color: #000;
+  text-transform: uppercase; }
+
+.logo-line {
+  display: block;
+  font-family: Oxygen;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 25vmax;
+  line-height: 12vw;
+  color: #FF0000; }

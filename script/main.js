@@ -196,6 +196,8 @@ class cvMain {
                 </section>
                 </div>`;
                     vm.content_show = vm.content_it_p1 + vm.content_neit + vm.content_it_p2;
+                    let timerId = setTimeout(this.showmodal, 1000);
+                    
     }
 
     menuClick() {
@@ -299,8 +301,9 @@ class cvMain {
                     </div>
                     <div class="footnote">Дополнительно разрабатывал сайт компании и франшизного проекта.</div>
                 </section></div>`;
-                this.showmodal();
+                
                 vm.content_show = vm.content_it_p1 + vm.content_neit + vm.content_it_p2;
+                this.timerId = setTimeout(this.showmodal, 1000);
 
                 } else if (menuItem === 'charact') {
                     vm.v_it = false;
@@ -310,7 +313,10 @@ class cvMain {
                     vm.v_charact = true;
                     vm.v_contact = false;
                     window.scrollTo(0, 400);
-                    vm.content_show = "Общая характеристика";
+
+                    vm.content_charact = ``;
+
+                    vm.content_show = vm.content_charact;
 
                 } else if (menuItem === 'contact') {
                     vm.v_it = false;
@@ -320,7 +326,10 @@ class cvMain {
                     vm.v_charact = false;
                     vm.v_contact = true;
                     window.scrollTo(0, 400);
-                    vm.content_show = "Контактная информация";
+
+                    vm.content_contact = ``;
+
+                    vm.content_show = vm.content_contact;
 
                 } else if (menuItem === 'it') {
                     window.scrollTo(0, 400);
@@ -342,6 +351,8 @@ class cvMain {
                          <div class="footnote">Посмотрите раздел &laquo;<a class="text-link" name="menu" data-menu="all" id="menu-all">Весь опыт</a>&raquo;. Там видно, почему я смогу работать практически в любой команде.</div>
                      </section>`;
                     vm.content_show = vm.content_it_p1 + vm.content_neit + vm.content_it_p2;
+                    this.timerId = setTimeout(this.showmodal, 1000);
+
 
                 } else if (menuItem === 'portfolio') {
                     vm.v_it = false;
@@ -353,70 +364,129 @@ class cvMain {
                     vm.content_show = '';
                     window.scrollTo(0, 400);
                 
-                    vm.content_portfolio = `<div class="portfolio-all" id="portfolio-all">
-                                        <div class="container_corrector">
-                                        <h1 class="h1–corrector">
-                                        <div>«ко</div>
-                                        <div class="flip">[р</div><span class="up-item">Р]</span>
-                                        <div>ектор»</div>
-                                    </h1>
-                                        </div>
-                                        <div class="container portfolio_bottom">
-                                            <div class="portfolio__desc">
-                                                <div class="portfolio_text">«Корректор» &#151; приложение, которое убирает мелкий «мусор» в тексте. Хорошо подходит для постов в соцсетях.</div>
-                                                <div class="portfolio_info">
-                                                    <p class="text-margin__bottom_20">Используются регулярные выражения.</p>
-                                                    <p class="info_link" ><a href="http://corrector.tolkoxa.ru">http://corrector.tolkoxa.ru</a></p>
-                                                    <p>Код на <a class="info_link" href="https://github.com/tolkoxa/corrector"> github.com</a></p>
-                                                </div>    
-                                            </div>
-                                        </div>
-                                        <div class="container_bullsandcows">
-                                            <header class="header-style">
-                                                <div class="cow-left"></div>
-                                                <div class="between-top">&nbsp;</div>
-                                                <div class="game-name">
-                                                    <p class="game-name__text_small">Игра</p>
-                                                    <p class="game-name__text_black name__text-laquo">&laquo;Быки
-                                                    <span class="game-name__text_white">и</span>
-                                                    </p>
-                                                    <p class="game-name__text_black">Коровы&raquo;</p>
-                                                </div>
-                                                <div class="between-top">Развивает<br>логичность мышления,<br>счёт и память.</div>
-                                                <div class="cow-right"></div>
-                                            </header>
-                                        </div>
-                                        <div class="container portfolio_bottom">
-                                            <div class="portfolio__desc">
-                                                <div class="portfolio_text">Игра «Быки и коровы» – браузерная игра (SPA) на развитие логичного мышления, счёта и памяти.</div>
-                                                <div class="portfolio_info">
-                                                    <p>Написана только на JS, без библиотек и фреймворков.</p>
-                                                    <p>Работает как SPA–приложение.</p>
-                                                    <p class="text-margin__bottom_20">Завершена только десктопная версия.</p>
-                                                    <p class="info_link" ><a href="http://games.tolkoxa.ru/bullsandcows">http://games.tolkoxa.ru/bullsandcows</a></p>
-                                                    <p>Код на <a  class="info_link" href="https://github.com/tolkoxa/bullsandcows"> github.com</a></p>
-                                                </div>    
-                                            </div>
-                                        </div>
-                                        <div class="container_randomizer">
-                                        <p class="main-header-logo-name">RANDOMIZER</p>
-                                        <p class="main-header-logo-desc">СЛУЧАЙНОСТИ НЕ СЛУЧАЙНЫ</p>
-                                        </div>
-                                        <div class="container portfolio_bottom">
-                                            <div class="portfolio__desc">
-                                                <div class="portfolio_text">Генератор случайностей из различных категорий: от фильмов до поздравлений.
-                                                <p>И конечно же, генератор случайных чисел.</p></div>
-                                                <div class="portfolio_info">
-                                                    <p>Проект «Randomizer» выполнен в рамках обучения</p>
-                                                    <p>в GeekBrains (стажировка). Сайт работает в формате SPA.</p>
-                                                    <p>Завершена только десктопная версия.</p>
-                                                    <p class="text-margin__bottom_20">Разработан на php, js и mysql.</p>
-                                                    <p class="info_link" ><a href="http://randomizer.me">http://randomizer.me</a></p>
-                                                    <p>Код на <a  class="info_link" href="https://github.com/tolkoxa/randomizer"> github.com</a></p>
-                                                </div>    
-                                            </div>
-                                        </div>
-                                    </div>`;
+                    vm.content_portfolio = `
+                        <div class="portfolio-all" id="portfolio-all">
+                            <div class="container_corrector container_portfolio">
+                                <h1 class="h1–corrector">
+                                    <div>«ко</div>
+                                    <div class="flip">[р</div><span class="up-item">Р]</span>
+                                    <div>ектор»</div>
+                                </h1>
+                            </div>
+                            <div class="container_center portfolio_bottom">
+                                <div class="portfolio__desc">
+                                    <div class="portfolio_text">«Корректор» &#151; приложение, которое убирает мелкий «мусор» в тексте. Хорошо подходит для постов в соцсетях.</div>
+                                    <div class="portfolio_info">
+                                        <p class="text-margin__bottom_20">Используются регулярные выражения.</p>
+                                        <p class="info_link">
+                                            <a href="http://corrector.tolkoxa.ru">http://corrector.tolkoxa.ru</a>
+                                        </p>
+                                        <p>Код на <a class="info_link" href="https://github.com/tolkoxa/corrector"> github.com</a></p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="container_portfolio container_bullsandcows">
+                                <header class="header-style">
+                                    <div class="cow-left"></div>
+                                    <div class="between-top">&nbsp;</div>
+                                    <div class="game-name">
+                                        <p class="game-name__text_small">Игра</p>
+                                        <p class="game-name__text_black name__text-laquo">&laquo;Быки
+                                            <span class="game-name__text_white">и</span>
+                                        </p>
+                                        <p class="game-name__text_black">Коровы&raquo;</p>
+                                    </div>
+                                    <div class="between-top">Развивает<br>логичность мышления,<br>счёт и память.</div>
+                                    <div class="cow-right"></div>
+                                </header>
+                            </div>
+                            <div class="container_center portfolio_bottom">
+                                <div class="portfolio__desc">
+                                    <div class="portfolio_text">Игра «Быки и коровы» – браузерная игра (SPA) на развитие логичного мышления, счёта и памяти.</div>
+                                    <div class="portfolio_info">
+                                        <p>Написана только на JS, без библиотек и фреймворков.</p>
+                                        <p>Работает как SPA–приложение.</p>
+                                        <p class="text-margin__bottom_20">Завершена только десктопная версия.</p>
+                                        <p class="info_link" ><a href="http://games.tolkoxa.ru/bullsandcows">http://games.tolkoxa.ru/bullsandcows</a></p>
+                                        <p>Код на <a  class="info_link" href="https://github.com/tolkoxa/bullsandcows"> github.com</a></p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="container_portfolio container_answers">
+                                <p class="text__title">Музыкальные ответы</p>
+                            </div>
+                                <div class="container_center portfolio_bottom">
+                                    <div class="portfolio__desc">
+                                        <div class="portfolio_text">Музыкальные ответы на часто задаваемый вопрос &laquo;Когда?&raquo; и на просьбу, от неприятного человека.
+                                    </div>
+                                    <div class="portfolio_info">
+                                        <p class="info_link"><a href="http://answer.tolkoxa.ru">http://answer.tolkoxa.ru</a></p>    
+                                        <p>Ответ на неприятную просьбу</p>
+                                        <p class="info_link"><a href="http://answer.tolkoxa.ru/what">http://answer.tolkoxa.ru/what</a></p>
+                                        <p>Ответ на вопрос &laquo;Когда?&raquo;</p>
+                                        <p class="info_link"><a href="http://answer.tolkoxa.ru/when">http://answer.tolkoxa.ru/when</a></p>
+                                        <p>Код на <a  class="info_link" href="https://github.com/tolkoxa/answer"> github.com</a></p>
+                                    </div>    
+                                </div>
+                            </div>
+                            <div class="container_portfolio">
+                                <div class="top-logo">
+                                    <span class="logo-text">Да</span>
+                                    <span class="logo-line">/</span>
+                                    <span class="logo-text">Нет</span>
+                                </div>
+                            </div>
+                            <div class="container_center portfolio_bottom">
+                                <div class="portfolio__desc">
+                                    <div class="portfolio_text">Задай вопрос &laquo;вселенной&raquo; и получи ответ. Задай вопрос на который можно ответить только «да» или «нет».
+                                    </div>
+                                    <div class="portfolio_info">
+                                        <p>Используется Vue (локально).</p>
+                                        <p class="info_link"><a href="http://danet.tolkoxa.ru">http://danet.tolkoxa.ru</a></p>
+                                        <p>Код на <a  class="info_link" href="https://github.com/tolkoxa/danet"> github.com</a></p>
+                                    </div>    
+                                </div>
+                            </div>    
+                            <div class="container_portfolio container_cv">
+                                <header class="header_cv container_center">
+                                    <div class="header__photo"></div>
+                                    <div class="header__desc">
+                                        <p class="header__name text-margin__bottom_20">Андрей Халимоненко</p>
+                                        <p class="header__text">Краткое описание жизни</p>
+                                        <p class="header__text text-margin__bottom_20">и профессиональных навыков</p>
+                                    </div>
+                                </header>
+                            </div>
+                            <div class="container_center portfolio_bottom">
+                                <div class="portfolio__desc">
+                                    <div class="portfolio_text"></div>
+                                    <div class="portfolio_info">
+                                        <p>Используется Vue (локально).</p>
+                                        <p class="info_link"><a href="http://cv.tolkoxa.ru">http://cv.tolkoxa.ru</a></p>
+                                        <p>Код на <a  class="info_link" href="https://github.com/tolkoxa/cv"> github.com</a></p>
+                                    </div>    
+                                </div>
+                            </div>
+                            <div class="container_portfolio container_randomizer">
+                                    <p class="main-header-logo-name">RANDOMIZER</p>
+                                    <p class="main-header-logo-desc">СЛУЧАЙНОСТИ НЕ СЛУЧАЙНЫ</p>
+                            </div>
+                                <div class="container_center portfolio_bottom">
+                                    <div class="portfolio__desc">
+                                        <div class="portfolio_text">Генератор случайностей из различных категорий: от фильмов до поздравлений.
+                                        <p>И конечно же, генератор случайных чисел.</p>
+                                    </div>
+                                    <div class="portfolio_info">
+                                        <p>Проект «Randomizer» выполнен в рамках обучения</p>
+                                        <p>в GeekBrains (стажировка). Сайт работает в формате SPA.</p>
+                                        <p>Завершена только десктопная версия.</p>
+                                        <p class="text-margin__bottom_20">Разработан на php, js и mysql.</p>
+                                        <p class="info_link" ><a href="http://randomizer.me">http://randomizer.me</a></p>
+                                        <p>Код на <a  class="info_link" href="https://github.com/tolkoxa/randomizer"> github.com</a></p>
+                                    </div>    
+                                </div>
+                            </div>
+                        </div>`;
                     vm.content_show = vm.content_portfolio;
                 }
             }
@@ -481,11 +551,11 @@ class cvMain {
             document.querySelector('#modal-window').insertAdjacentHTML("beforeend", str);
 
             document.getElementById('close-modal').addEventListener('click', () => {
-                this.closeModal();
+                forhr.closeModal();
             });
 
             document.getElementById('overlay').addEventListener('click', () => {
-                this.closeModal();
+                forhr.closeModal();
             });
         });
     }
@@ -493,11 +563,11 @@ class cvMain {
         document.getElementById('overlay').classList.add('invisible-block');
         document.getElementById('modal-window').classList.add('invisible-block');
         document.querySelector('#modal-window').innerHTML = '';
+        clearTimeout(this.timerId);
     }
 }
 
 let forhr = new cvMain();
 window.onload = function() {
     getSkills('hard');
-    forhr.showmodal();  
 };
