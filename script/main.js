@@ -1,6 +1,6 @@
 let vm = new Vue({
     el: '#app',
-    data:{
+    data: {
         v_it: true,
         v_neit: false,
         v_anyit: true,
@@ -18,8 +18,8 @@ let vm = new Vue({
         sticky: false,
         overLay: "document.getElementById('overlay')"
     },
-    methods:{
-        showmodal: function () {
+    methods: {
+        showmodal: function() {
             forhr.showModal();
         }
     }
@@ -127,7 +127,7 @@ class cvMain {
                         <a class="menu__item" id="cert" v-on:click="showmodal">Посмотреть сертификаты</a>.
                     </div>
                 </section>`;
-                
+
         vm.content_neit_grey = `<div id="neit">
                     <section class="block block_margin">
                         <div class="block_data text-additional">
@@ -139,7 +139,7 @@ class cvMain {
                         </div>
                         <div class="footnote">Посмотрите раздел &laquo;<a class="text-link" name="menu" data-menu="all" id="menu-all">Весь опыт</a>&raquo;. Там видно, почему я смогу работать практически в любой команде.</div>
                     </section></div>`;
-                
+
         vm.content_it_p2 = `<section class="block block_margin">
                     <div class="block_data">
                         январь 2005 &#151; март 2006
@@ -196,9 +196,9 @@ class cvMain {
                     </div>
                 </section>
                 </div>`;
-                    vm.content_show = vm.content_it_p1 + vm.content_neit_grey + vm.content_it_p2;
-                    let timerId = setTimeout(this.showmodal, 1000);
-                    
+        vm.content_show = vm.content_it_p1 + vm.content_neit_grey + vm.content_it_p2;
+        let timerId = setTimeout(this.showmodal, 1000);
+
     }
 
     menuClick() {
@@ -211,7 +211,7 @@ class cvMain {
                 let menuItem = e.dataset.menu;
 
                 if (menuItem === 'all') {
-                    if (!vm.v_it) {getSkills('hard');};
+                    if (!vm.v_it) { getSkills('hard'); };
                     vm.v_it = false;
                     vm.v_neit = true;
                     vm.v_anyit = true;
@@ -302,9 +302,9 @@ class cvMain {
                     </div>
                     <div class="footnote">Дополнительно разрабатывал сайт компании и франшизного проекта.</div>
                 </section></div>`;
-                
-                vm.content_show = vm.content_it_p1 + vm.content_neit + vm.content_it_p2;
-                this.timerId = setTimeout(this.showmodal, 1000);
+
+                    vm.content_show = vm.content_it_p1 + vm.content_neit + vm.content_it_p2;
+                    this.timerId = setTimeout(this.showmodal, 1000);
 
                 } else if (menuItem === 'charact') {
                     vm.v_it = false;
@@ -373,7 +373,7 @@ class cvMain {
                             Люблю читать книги, в основном деловую литератур и на развитие личности. В 2013 году прочитал и прослушал 53 книги.
                         </p>
                         <p class="charact_text_item">
-                            Очень люблю смотреть кино. Самый любимый жанр &#151; фильмы с неожиданным финалом. Сериалы люблю и &laquo;ненавижу&lquo; одновременно. Если очень интересно, то могу смотреть сразу много серий.
+                            Очень люблю смотреть кино. Самый любимый жанр &#151; фильмы с неожиданным финалом. Сериалы люблю и &laquo;ненавижу&raquo; одновременно. Если очень интересно, то могу смотреть сразу много серий.
                         </p>
                         <p class="charact_text_item">
                             Музыку слушаю постоянно. В конце месяца составляю плейл–лист песен, которые были интересны в уходящем месяце. Делюсь ссылками в соцсетях и своём канале.
@@ -460,14 +460,14 @@ class cvMain {
 
                 } else if (menuItem === 'it') {
                     window.scrollTo(0, 400);
-                    if (!vm.v_anyit) {getSkills('hard');};
+                    if (!vm.v_anyit) { getSkills('hard'); };
                     vm.v_it = true;
                     vm.v_neit = false;
                     vm.v_anyit = true;
                     vm.v_portfolio = false;
                     vm.v_charact = false;
                     vm.v_contact = false;
-                    
+
                     vm.content_show = vm.content_it_p1 + vm.content_neit_grey + vm.content_it_p2;
                     this.timerId = setTimeout(this.showmodal, 1000);
 
@@ -481,7 +481,7 @@ class cvMain {
                     vm.v_contact = false;
                     vm.content_show = '';
                     window.scrollTo(0, 400);
-                
+
                     vm.content_portfolio = `
                         <div class="portfolio-all" id="portfolio-all">
                             <div class="container_corrector container_portfolio">
@@ -615,13 +615,12 @@ class cvMain {
 
     showmodal() {
         console.log('modal');
-        document.getElementById('cert').addEventListener('click', ()=> {
+        document.getElementById('cert').addEventListener('click', () => {
             console.log('click--');
             let overLay = document.getElementById('overlay');
             let modalWin = document.getElementById('modal-window');
 
-            let certArrAll = [
-                {
+            let certArrAll = [{
                     id: '2116749_652449',
                     text: 'Курс: «HTML/CSS. Интерактивный курс»',
                     date: '30.09.2019',
@@ -658,9 +657,9 @@ class cvMain {
                     number: '0874823'
                 },
             ];
-        
+
             let str = `<a class="close-modal" id="close-modal">╳</a>`;
-            certArrAll.forEach((elem)=> {
+            certArrAll.forEach((elem) => {
                 str = str + `<img src="img/cert/${elem.id}.jpg" width="auto" height="auto" alt="${elem.text}"><p class="label-text">${elem.text}, ${elem.date}</p><p class="label-text__margin-last">№${elem.number}</p>`;
             });
 
