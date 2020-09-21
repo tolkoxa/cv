@@ -111,7 +111,7 @@ class cvMain {
                     <div class="block_text">
                         <p class="block_text__item">Образовательный портал &laquo;<a class="text-link" href="http://geekbrains.ru">GeekBrains</a>&raquo;, стажировка.</p>
                         <p class="block_text__item">Product owner, team leader, дизайнер и верстальщик.</p>
-                        <p class="block_text__item">В рамках курса придумал проект, который разработали совсемтно с командой (другие студенты). Проект &#151; генератор случайных вариантов из различных категорий &#151; Randomizer (<a class="text-link" href="http://randomizer.me"
+                        <p class="block_text__item">В рамках курса придумал проект, который разработали совместно с командой (другие студенты). Проект &#151; генератор случайных вариантов из различных категорий &#151; Randomizer (<a class="text-link" href="http://randomizer.me"
                                 target="_blanck">http://randomizer.me</a>).</p>
                         <p class="block_text__item">Генератор работает как SPA–приложение.</p>
                     </div>
@@ -122,8 +122,8 @@ class cvMain {
                     </div>
                     <div class="block_text">
                         <p class="block_text__item">Образовательный портал &laquo;<a class="text-link" href="http://geekbrains.ru">GeekBrains</a>&raquo;.</p>
-                        <p class="block_text__item">Обучение по професии frontend–разработчик.</p>
-                        <p class="block_text__item">Основные курсы: html5/css3, javascript 1–й и 2–й уровени, reactjs.</p>
+                        <p class="block_text__item">Обучение по профессии frontend–разработчик.</p>
+                        <p class="block_text__item">Основные курсы: html5/css3, javascript 1–й и 2–й уровни, reactjs.</p>
                         <a class="menu__item" id="cert" v-on:click="showmodal">Посмотреть сертификаты</a>.
                     </div>
                 </section>`;
@@ -322,7 +322,7 @@ class cvMain {
                         </p>
                         <p class="charact_text_item">
                             Родился и вырос в Тольятти (Самарская область). Жил там до 35 лет.
-                            С 9 лет рос без отца (погиб в автокатастрофе).portfolio_text_item
+                            С 9 лет рос без отца (погиб в автокатастрофе).
                         </p>
                         <p class="charact_text_title">
                             Пел в опере &laquo;Снегурочка&raquo;
@@ -391,7 +391,7 @@ class cvMain {
                             Доверяю и верю человеку, пока он не убедит меня в обратном. Достаточно терпелив и с понимание отношусь к поступкам и поведению людей. Часто могу понять причинно–следственные связи в поступках.
                         </p>
                         <p class="charact_text_title">
-                            Жена, дети
+                            Семья
                         </p>
                         <p class="charact_text_item">
                             Женат. Воспитываю двоих детей: 9 лет и 2 года.
