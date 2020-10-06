@@ -532,6 +532,23 @@ class cvMain {
                                     </div>
                                 </div>
                             </div>
+                            <div class="container_portfolio">
+                            <p class="logo__text logo__text_color_black">БРЕНД<span class="logo__text__color_orange accent">А</span>ЗБУКА</p>
+                            </div>
+                            <div class="container_center portfolio_bottom">
+                                <div class="portfolio__desc">
+                                    <div class="portfolio_text">
+                                    <p class="portfolio_text_item">Игра «БРЕНДАЗБУКА» &#151; каждая буква русского алфавита представлена буквой известного бренда.</p></div>
+                                    <div class="portfolio_info">
+                                    <p>Написана только на JS, без библиотек и фреймворков.</p>
+                                    <p>Работает как SPA–приложение.</p>
+                                        <p class="info_link">
+                                            <a href="http://brandalphabet.tolkoxa.ru">http://brandalphabet.tolkoxa.ru</a>
+                                        </p>
+                                        <p>Код на <a class="info_link" href="https://github.com/tolkoxa/brandalphabet"> github.com</a></p>
+                                    </div>
+                                </div>
+                            </div>
                             <div class="container_portfolio container_answers">
                                 <p class="text__title">Музыкальные ответы</p>
                             </div>

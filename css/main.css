@@ -603,3 +603,34 @@ body {
   font-size: 25vmax;
   line-height: 12vw;
   color: #FF0000; }
+
+.logo__text {
+  padding: 0 0 40px 0;
+  font-family: "IBM Plex Sans", sans-serif;
+  font-size: 4rem;
+  line-height: 1.25rem;
+  font-weight: 500; }
+  .logo__text_color_black {
+    color: #000; }
+  .logo__text__color_orange {
+    padding: 0 0 0 3px;
+    color: #e46613;
+    font-size: 4.2rem;
+    font-weight: 500;
+    font-style: italic; }
+
+.accent {
+  position: relative; }
+  .accent::before {
+    content: '–';
+    font-size: 2.0rem;
+    font-weight: 500;
+    position: absolute;
+    top: -3px;
+    left: 35px;
+    color: #e46613;
+    transform: rotate(135deg);
+    -moz-transform: rotate(135deg);
+    -ms-transform: rotate(135deg);
+    -webkit-transform: rotate(135deg);
+    -o-transform: rotate(135deg); }
