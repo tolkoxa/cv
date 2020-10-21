@@ -631,6 +631,10 @@ body {
     background-color: #ffe002;
 }
 
+.container_interview {
+    background-color: $color_grey;
+}
+
 .container_answers {
     background-image: url(../img/answer_bg.jpg);
     background-position: bottom right;
@@ -734,5 +738,15 @@ body {
         -ms-transform: rotate(135deg);
         -webkit-transform: rotate(135deg);
         -o-transform: rotate(135deg);
+    }
+}
+
+.title {
+    font-family: $font_2;
+    font-size: 3rem;
+    width: 500px;
+    &__sub {
+        font-family: $font_3;
+        font-size: 2rem;
     }
 }

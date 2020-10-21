@@ -603,6 +603,24 @@ class cvMain {
                                     </div>    
                                 </div>
                             </div>
+                            <div class="container_portfolio container_interview">
+                                <h1 class="title">Решение тестовых задач
+                                <p class="title__sub">перед собеседованием</p>
+                                </h1>
+                            </div>
+                            <div class="container_center portfolio_bottom">
+                                <div class="portfolio__desc">
+                                    <div class="portfolio_text">
+                                    <p class="portfolio_text_item">Перед некоторыми вакансиями просят выполнить тестовое задание.</p>
+                                    <p class="portfolio_text_item">В этом разделе я собрал свои решения таких заданий.</p>
+                                    </div>
+                                    <div class="portfolio_info">
+                                        <p>Чистый JS</p>
+                                        <p class="info_link"><a href="http://before-the-interview.tolkoxa.ru/">http://before-the-interview.tolkoxa.ru/</a></p>
+                                        <p>Код на <a  class="info_link" href="https://github.com/tolkoxa/before-the-interview"> github.com</a></p>
+                                    </div>    
+                                </div>
+                            </div>
                             <div class="container_portfolio container_randomizer">
                                     <p class="main-header-logo-name">RANDOMIZER</p>
                                     <p class="main-header-logo-desc">СЛУЧАЙНОСТИ НЕ СЛУЧАЙНЫ</p>

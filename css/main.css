@@ -541,6 +541,9 @@ body {
 .container_cv {
   background-color: #ffe002; }
 
+.container_interview {
+  background-color: grey; }
+
 .container_answers {
   background-image: url(../img/answer_bg.jpg);
   background-position: bottom right;
@@ -634,3 +637,11 @@ body {
     -ms-transform: rotate(135deg);
     -webkit-transform: rotate(135deg);
     -o-transform: rotate(135deg); }
+
+.title {
+  font-family: "Rubik Mono One", sans-serif;
+  font-size: 3rem;
+  width: 500px; }
+  .title__sub {
+    font-family: "Scada", sans-serif;
+    font-size: 2rem; }
