@@ -442,13 +442,7 @@ class cvMain {
                             <a href="https://vk.com/pitchtrener">Вконтакте</a>
                         </p>
                         <p class="charact_text_item">
-                            <a href="https://facebook.com/pitchtrener">Facebook</a>
-                        </p>
-                        <p class="charact_text_item">
                             <a href="https://instagram.com/pitchtrener">Инстаграм</a>
-                        </p>
-                        <p class="charact_text_item">
-                            <a href="https://twitter.com/pitchtrener">Twitter</a>
                         </p>
                         <p class="charact_text_item">
                             <a href="https://t.me/tolkoxa">Телеграм–канал</a>
